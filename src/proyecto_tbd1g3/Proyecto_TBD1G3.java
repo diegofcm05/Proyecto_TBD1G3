@@ -15,6 +15,8 @@ public class Proyecto_TBD1G3 {
      */
     public static void main(String[] args) {
         System.out.println("Aqui empieza el proyecto de TBD1 de Diego, Daniel, Junnior y Hector");
+        System.out.println("Prueba de Cambios 1");
+        System.out.println("0+0 = 0");
     }
     
 }
