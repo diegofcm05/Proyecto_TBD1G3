@@ -4,6 +4,8 @@
  */
 package proyecto_tbd1g3;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author dfcm9
@@ -15,6 +17,8 @@ public class Log_In extends javax.swing.JFrame {
      */
     public Log_In() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**
@@ -35,14 +39,27 @@ public class Log_In extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        JD_MainScreen = new javax.swing.JDialog();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        btn_MainClientes = new javax.swing.JButton();
+        btn_ProductosMain = new javax.swing.JButton();
+        btn_TiendasMain = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        btn_TiendasEstrella = new javax.swing.JButton();
+        btn_ProdEstrella = new javax.swing.JButton();
+        btn_TiposProducto = new javax.swing.JButton();
+        btn_salirMain = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jtf_NombreUser = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jtf_PassUser = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btn_LogInConf = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -128,6 +145,138 @@ public class Log_In extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel10.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Pantalla Principal");
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesTBD1/MainScreenCK.jpg"))); // NOI18N
+        jLabel11.setText("jLabel11");
+
+        btn_MainClientes.setBackground(new java.awt.Color(153, 0, 0));
+        btn_MainClientes.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 18)); // NOI18N
+        btn_MainClientes.setForeground(new java.awt.Color(255, 255, 255));
+        btn_MainClientes.setText("Clientes");
+
+        btn_ProductosMain.setBackground(new java.awt.Color(153, 0, 0));
+        btn_ProductosMain.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 18)); // NOI18N
+        btn_ProductosMain.setForeground(new java.awt.Color(255, 255, 255));
+        btn_ProductosMain.setText("Productos");
+
+        btn_TiendasMain.setBackground(new java.awt.Color(153, 0, 0));
+        btn_TiendasMain.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 18)); // NOI18N
+        btn_TiendasMain.setForeground(new java.awt.Color(255, 255, 255));
+        btn_TiendasMain.setText("Tiendas");
+
+        jLabel12.setFont(new java.awt.Font("Cambria Math", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Vistas Adicionales");
+
+        jLabel13.setFont(new java.awt.Font("Cambria Math", 1, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Relaciones Base");
+
+        btn_TiendasEstrella.setBackground(new java.awt.Color(204, 102, 0));
+        btn_TiendasEstrella.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        btn_TiendasEstrella.setForeground(new java.awt.Color(255, 255, 255));
+        btn_TiendasEstrella.setText("Tiendas Estrella");
+
+        btn_ProdEstrella.setBackground(new java.awt.Color(204, 102, 0));
+        btn_ProdEstrella.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        btn_ProdEstrella.setForeground(new java.awt.Color(255, 255, 255));
+        btn_ProdEstrella.setText("Productos Estrella");
+
+        btn_TiposProducto.setBackground(new java.awt.Color(204, 102, 0));
+        btn_TiposProducto.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        btn_TiposProducto.setForeground(new java.awt.Color(255, 255, 255));
+        btn_TiposProducto.setText("Tipos de Producto");
+        btn_TiposProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_TiposProductoActionPerformed(evt);
+            }
+        });
+
+        btn_salirMain.setBackground(new java.awt.Color(102, 0, 0));
+        btn_salirMain.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
+        btn_salirMain.setForeground(new java.awt.Color(255, 255, 255));
+        btn_salirMain.setText("Salir");
+        btn_salirMain.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_salirMainMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(btn_MainClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(44, 44, 44)
+                                .addComponent(btn_ProductosMain, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(44, 44, 44)
+                                .addComponent(btn_TiendasMain, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(btn_TiendasEstrella, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(44, 44, 44)
+                                .addComponent(btn_ProdEstrella, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(44, 44, 44)
+                                .addComponent(btn_TiposProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_salirMain, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(36, 48, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_MainClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_ProductosMain, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_TiendasMain, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(65, 65, 65)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_TiendasEstrella, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_ProdEstrella, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_TiposProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_salirMain, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+
+        javax.swing.GroupLayout JD_MainScreenLayout = new javax.swing.GroupLayout(JD_MainScreen.getContentPane());
+        JD_MainScreen.getContentPane().setLayout(JD_MainScreenLayout);
+        JD_MainScreenLayout.setHorizontalGroup(
+            JD_MainScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        JD_MainScreenLayout.setVerticalGroup(
+            JD_MainScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JD_MainScreenLayout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Log In - Tiendas Circle K");
 
@@ -148,7 +297,7 @@ public class Log_In extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Nombre de Usuario");
 
-        jTextField1.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 14)); // NOI18N
+        jtf_NombreUser.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 14)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -157,7 +306,7 @@ public class Log_In extends javax.swing.JFrame {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesTBD1/CKimage.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
 
-        jTextField2.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 14)); // NOI18N
+        jtf_PassUser.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 14)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -168,6 +317,11 @@ public class Log_In extends javax.swing.JFrame {
         btn_LogInConf.setForeground(new java.awt.Color(255, 255, 255));
         btn_LogInConf.setText("Log In");
         btn_LogInConf.setFocusable(false);
+        btn_LogInConf.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_LogInConfMouseClicked(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(153, 0, 51));
         jButton1.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
@@ -191,8 +345,8 @@ public class Log_In extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(23, 23, 23)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
-                                    .addComponent(jTextField1)
+                                    .addComponent(jtf_PassUser, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                                    .addComponent(jtf_NombreUser)
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -217,11 +371,11 @@ public class Log_In extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtf_NombreUser, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtf_PassUser, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(btn_LogInConf, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -247,6 +401,32 @@ public class Log_In extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_TiposProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TiposProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_TiposProductoActionPerformed
+
+    private void btn_LogInConfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_LogInConfMouseClicked
+        if ( jtf_NombreUser.getText().equals("Admin") && jtf_PassUser.getText().equals("1234")){
+            this.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Log In Exitoso.\nBienvenido, "+jtf_NombreUser.getText());
+            JD_MainScreen.pack();
+            JD_MainScreen.setModal(false);
+            JD_MainScreen.setLocationRelativeTo(this);
+            JD_MainScreen.setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrecto.\nIntente de nuevo.");
+        }
+    }//GEN-LAST:event_btn_LogInConfMouseClicked
+
+    private void btn_salirMainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirMainMouseClicked
+        int opcion = JOptionPane.showConfirmDialog(null, "Desea salir del usuario actual?", "Salir", JOptionPane.YES_NO_OPTION);
+        if (opcion == 0){
+            JD_MainScreen.setVisible(false);
+            this.setVisible(true);
+        }
+    }//GEN-LAST:event_btn_salirMainMouseClicked
 
     /**
      * @param args the command line arguments
@@ -284,12 +464,24 @@ public class Log_In extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog JD_MainScreen;
     private javax.swing.JDialog JD_SignIn;
     private javax.swing.JButton btn_LogInConf;
+    private javax.swing.JButton btn_MainClientes;
+    private javax.swing.JButton btn_ProdEstrella;
+    private javax.swing.JButton btn_ProductosMain;
+    private javax.swing.JButton btn_TiendasEstrella;
+    private javax.swing.JButton btn_TiendasMain;
+    private javax.swing.JButton btn_TiposProducto;
+    private javax.swing.JButton btn_salirMain;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -300,9 +492,10 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jtf_NombreUser;
+    private javax.swing.JTextField jtf_PassUser;
     // End of variables declaration//GEN-END:variables
 }
