@@ -7,6 +7,7 @@ package proyecto_tbd1g3;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author dfcm9
@@ -23,5 +24,8 @@ public class QueryTest {
                     "capacity int,\n" +
                     "primary key (building, room_number));");
     }
+    
+    
+    
     
 }

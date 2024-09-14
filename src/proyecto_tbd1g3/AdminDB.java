@@ -6,6 +6,7 @@ package proyecto_tbd1g3;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 
@@ -22,7 +23,8 @@ public class AdminDB {
     public void Conectarme(){
         try {
             conexion = DriverManager.getConnection(url, user, pass);
-            JOptionPane.showMessageDialog(null, "Conectado exitosamente");
+            JOptionPane.showMessageDialog(null, "Conectado exitosamente.\n"
+                    + "Cargando Datos...");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Ocurrio un error en Conectarme");
             ex.printStackTrace();
@@ -40,6 +42,22 @@ public class AdminDB {
             JOptionPane.showMessageDialog(null, "Ocurrio un error en ingreso");
             ex.printStackTrace();
         }
+    }
+    
+    public ResultSet ReturnResultSet(String script){
+        PreparedStatement pst = null;
+        ResultSet rst = null;
+        Conectarme();
+        
+        try {
+            pst = conexion.prepareStatement(script);
+            rst = pst.executeQuery();
+            
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        }
+        
+        return rst;
     }
     
 }
