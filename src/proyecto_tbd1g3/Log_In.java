@@ -25,6 +25,7 @@ public class Log_In extends javax.swing.JFrame {
     String clienteToUpdate = "";
     String tiendaToUpdate = "";
     String productoToUpdate = "";
+    String productoUPCToUpdate = "";
 
     //AdminDB bd = new AdminDB();
     /**
@@ -162,14 +163,16 @@ public class Log_In extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         TF_nomProductoUpdate = new javax.swing.JTextField();
-        TF_TipoProductoUpdate = new javax.swing.JTextField();
+        TF_CantidadProductoUpdate = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
-        TF_EmbalajeProductoUpdate = new javax.swing.JTextField();
+        TF_PrecioProductoUpdate = new javax.swing.JTextField();
         CB_TamProductoUpdate = new javax.swing.JComboBox<>();
         btn_ConfUpdateProd = new javax.swing.JButton();
         btn_salirUpdateProducto = new javax.swing.JButton();
         jLabel45 = new javax.swing.JLabel();
+        TF_ReOrdenProductoUpdate = new javax.swing.JTextField();
+        jLabel48 = new javax.swing.JLabel();
         JD_UpdateCliente = new javax.swing.JDialog();
         jPanel13 = new javax.swing.JPanel();
         jLabel51 = new javax.swing.JLabel();
@@ -1375,15 +1378,15 @@ public class Log_In extends javax.swing.JFrame {
 
         jLabel40.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel40.setText("Tipo");
+        jLabel40.setText("Cantidad");
 
         jLabel41.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel41.setText("Embalaje");
+        jLabel41.setText("Precio");
 
         jLabel42.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel42.setText("Tamaño");
+        jLabel42.setText("ReOrden");
 
         CB_TamProductoUpdate.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pequeño", "Mediano", "Grande" }));
 
@@ -1391,6 +1394,11 @@ public class Log_In extends javax.swing.JFrame {
         btn_ConfUpdateProd.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
         btn_ConfUpdateProd.setForeground(new java.awt.Color(255, 255, 255));
         btn_ConfUpdateProd.setText("Realizar Cambios");
+        btn_ConfUpdateProd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_ConfUpdateProdMouseClicked(evt);
+            }
+        });
 
         btn_salirUpdateProducto.setBackground(new java.awt.Color(153, 0, 0));
         btn_salirUpdateProducto.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
@@ -1404,28 +1412,14 @@ public class Log_In extends javax.swing.JFrame {
 
         jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesTBD1/ProductosIcon.png"))); // NOI18N
 
+        jLabel48.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel48.setText("Tamaño");
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CB_TamProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TF_nomProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TF_EmbalajeProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(115, 115, 115)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TF_MarcaProductoUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(TF_TipoProductoUpdate))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
@@ -1441,6 +1435,31 @@ public class Log_In extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_salirUpdateProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(31, 31, 31))
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_nomProductoUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(TF_PrecioProductoUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(TF_ReOrdenProductoUpdate))
+                        .addGap(115, 115, 115)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CB_TamProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TF_MarcaProductoUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                                .addComponent(TF_CantidadProductoUpdate)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                    .addContainerGap(421, Short.MAX_VALUE)
+                    .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(166, 166, 166)))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1468,17 +1487,24 @@ public class Log_In extends javax.swing.JFrame {
                     .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TF_TipoProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TF_EmbalajeProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TF_CantidadProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_PrecioProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CB_TamProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CB_TamProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_ReOrdenProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_ConfUpdateProd, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_salirUpdateProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26))
+            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                    .addContainerGap(284, Short.MAX_VALUE)
+                    .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(151, 151, 151)))
         );
 
         javax.swing.GroupLayout JD_UpdateProductoLayout = new javax.swing.GroupLayout(JD_UpdateProducto.getContentPane());
@@ -1518,6 +1544,11 @@ public class Log_In extends javax.swing.JFrame {
         btn_ConfUpdateClient.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
         btn_ConfUpdateClient.setForeground(new java.awt.Color(255, 255, 255));
         btn_ConfUpdateClient.setText("Modificar Cliente");
+        btn_ConfUpdateClient.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_ConfUpdateClientMouseClicked(evt);
+            }
+        });
 
         btn_salirUpdateCliente.setBackground(new java.awt.Color(153, 0, 0));
         btn_salirUpdateCliente.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
@@ -1742,6 +1773,11 @@ public class Log_In extends javax.swing.JFrame {
         btn_UpdateTiendaConf.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
         btn_UpdateTiendaConf.setForeground(new java.awt.Color(255, 255, 255));
         btn_UpdateTiendaConf.setText("Actualizar Tienda");
+        btn_UpdateTiendaConf.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_UpdateTiendaConfMouseClicked(evt);
+            }
+        });
 
         btn_salirUpdateTienda.setBackground(new java.awt.Color(153, 0, 0));
         btn_salirUpdateTienda.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
@@ -2741,8 +2777,30 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_salirUpdateProductoMouseClicked
 
     private void btn_UpdateProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UpdateProductoMouseClicked
-        JD_CrudProductos.dispose();
-        AbrirVentana(JD_UpdateProducto);
+        if (JTB_TablaProductos.getSelectedRow()>=0){
+            String Oldnombre = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 2).toString();
+            String marca = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 4).toString();
+            String Precio =  JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 5).toString();
+            String cantidad = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 6).toString();
+            String reorden = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 7).toString();
+            
+            productoToUpdate = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 0).toString();
+            productoUPCToUpdate = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 1).toString();
+
+            System.out.println("nombre seleccionado = "+Oldnombre);
+      
+            TF_nomProductoUpdate.setText(Oldnombre);
+            TF_MarcaProductoUpdate.setText(marca);
+            TF_PrecioProductoUpdate.setText(Precio);
+            TF_CantidadProductoUpdate.setText(cantidad);
+            TF_ReOrdenProductoUpdate.setText(reorden);
+
+            JD_CrudProductos.dispose();
+            AbrirVentana(JD_UpdateProducto);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Tiene que seleccionar una fila para modificar.");
+        }
     }//GEN-LAST:event_btn_UpdateProductoMouseClicked
 
     private void btn_salirInsertClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirInsertClienteMouseClicked
@@ -2811,18 +2869,45 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_InsertClienteMouseClicked
 
     private void btn_UpdateClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UpdateClienteMouseClicked
-        JD_CrudClientes.dispose();
-        AbrirVentana(JD_UpdateCliente);
+        if (JTB_TablaClientes.getSelectedRow()>=0){
+            String Oldnombre = JTB_TablaClientes.getValueAt(JTB_TablaClientes.getSelectedRow(), 1).toString();
+            String oldCorreo = JTB_TablaClientes.getValueAt(JTB_TablaClientes.getSelectedRow(), 2).toString();
+            clienteToUpdate = JTB_TablaClientes.getValueAt(JTB_TablaClientes.getSelectedRow(), 0).toString();
+
+            System.out.println("nombre seleccionado = "+Oldnombre);
+            System.out.println("correo seleccionado = "+oldCorreo);
+            TF_NombreClienteUpd.setText(Oldnombre);
+            TF_CorreoClienteUpd.setText(oldCorreo);
+
+
+            JD_CrudClientes.dispose();
+            AbrirVentana(JD_UpdateCliente);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Tiene que seleccionar una fila para modificar.");
+        }
     }//GEN-LAST:event_btn_UpdateClienteMouseClicked
 
     private void btn_InsertTiendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InsertTiendaMouseClicked
-        JD_CrudTiendas.dispose();
+        JD_CrudClientes.dispose();
         AbrirVentana(JD_InsertTienda);
     }//GEN-LAST:event_btn_InsertTiendaMouseClicked
 
     private void btn_UpdateTiendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UpdateTiendaMouseClicked
-        JD_CrudTiendas.dispose();
-        AbrirVentana(JD_UpdateTienda);
+        if (JTB_TablaTiendas.getSelectedRow()>=0){
+            String Oldnombre = JTB_TablaTiendas.getValueAt(JTB_TablaTiendas.getSelectedRow(), 1).toString();
+            tiendaToUpdate = JTB_TablaTiendas.getValueAt(JTB_TablaTiendas.getSelectedRow(), 0).toString();
+
+            System.out.println("nombre seleccionado = "+Oldnombre);
+            TF_NombreTienda1.setText(Oldnombre);
+
+
+            JD_CrudTiendas.dispose();
+            AbrirVentana(JD_UpdateTienda);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Tiene que seleccionar una fila para modificar.");
+        }
     }//GEN-LAST:event_btn_UpdateTiendaMouseClicked
 
     private void btn_salirTiposProdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirTiposProdMouseClicked
@@ -3012,6 +3097,71 @@ public class Log_In extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_ConfUpdateVendMouseClicked
 
+    private void btn_UpdateTiendaConfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UpdateTiendaConfMouseClicked
+        if (!TF_NombreTienda1.getText().equals("")){
+            AdminDB bd = new AdminDB();
+            
+            String realname = TF_NombreTienda1.getText();
+            String type = (String) CB_HorarioTienda1.getSelectedItem();
+
+            //Llamado de Procedimento para actualizar vendedor
+            bd.Ingreso("CALL actualizar_tienda('"+tiendaToUpdate+"', '"+realname+"', '"+type+"');");
+            tiendaToUpdate = "";
+            
+            JD_UpdateTienda.dispose();
+            AbrirVentana(JD_MainScreen);
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para actualizar, llene todos los campos necesarios.");
+        }
+    }//GEN-LAST:event_btn_UpdateTiendaConfMouseClicked
+
+    private void btn_ConfUpdateClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ConfUpdateClientMouseClicked
+        if (!TF_NombreClienteUpd.getText().equals("") || !TF_NombreClienteUpd.getText().equals("")){
+            AdminDB bd = new AdminDB();
+            
+            String realname = TF_NombreClienteUpd.getText();
+            String newCorreo = TF_CorreoClienteUpd.getText();
+
+            //Llamado de Procedimento para actualizar vendedor
+            bd.Ingreso("CALL actualizar_cliente('"+clienteToUpdate+"', '"+realname+"', '"+newCorreo+"');");
+            clienteToUpdate = "";
+            
+            JD_UpdateCliente.dispose();
+            AbrirVentana(JD_MainScreen);
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para actualizar, llene todos los campos necesarios.");
+        }
+    }//GEN-LAST:event_btn_ConfUpdateClientMouseClicked
+
+    private void btn_ConfUpdateProdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ConfUpdateProdMouseClicked
+        if (!TF_nomProductoUpdate.getText().equals("") || !TF_MarcaProductoUpdate.getText().equals("") || !TF_PrecioProductoUpdate.getText().equals("") || !TF_CantidadProductoUpdate.getText().equals("") || !TF_ReOrdenProductoUpdate.getText().equals("")){
+            AdminDB bd = new AdminDB();
+            
+            String realname = TF_nomProductoUpdate.getText();
+            String newMarca = TF_MarcaProductoUpdate.getText();
+            double newPrecio = Double.parseDouble( TF_PrecioProductoUpdate.getText());
+            String newCantidad = TF_CantidadProductoUpdate.getText();
+            String newReorden = TF_ReOrdenProductoUpdate.getText();
+            String newTam = CB_TamProductoUpdate.getSelectedItem().toString();
+
+            //Llamado de Procedimento para actualizar vendedor
+            bd.Ingreso("CALL actualizar_inventario_y_producto('"+productoToUpdate+"', '"+productoUPCToUpdate+"', "+newPrecio+", "+newCantidad+", '"+newReorden+"', '"+realname+"', '"+newMarca+"', '"+newTam+"');");
+            clienteToUpdate = "";
+            productoUPCToUpdate="";
+            
+            JD_UpdateProducto.dispose();
+            AbrirVentana(JD_MainScreen);
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para actualizar, llene todos los campos necesarios.");
+        }
+    }//GEN-LAST:event_btn_ConfUpdateProdMouseClicked
+
     private String generateID() {
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         String id = "";
@@ -3101,10 +3251,10 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JTable JTB_TablaTiendasEstr;
     private javax.swing.JTable JTB_TiposProd;
     private javax.swing.JTable JTB_VendedoresAct;
+    private javax.swing.JTextField TF_CantidadProductoUpdate;
     private javax.swing.JTextField TF_CorreoCliente;
     private javax.swing.JTextField TF_CorreoClienteUpd;
     private javax.swing.JTextField TF_EmbalajeProducto;
-    private javax.swing.JTextField TF_EmbalajeProductoUpdate;
     private javax.swing.JTextField TF_IDTienda;
     private javax.swing.JTextField TF_MarcaProducto;
     private javax.swing.JTextField TF_MarcaProductoUpdate;
@@ -3114,8 +3264,9 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JTextField TF_NombreTienda1;
     private javax.swing.JTextField TF_NombreVendedor;
     private javax.swing.JTextField TF_NombreVendedorUpdate;
+    private javax.swing.JTextField TF_PrecioProductoUpdate;
+    private javax.swing.JTextField TF_ReOrdenProductoUpdate;
     private javax.swing.JTextField TF_TipoProducto;
-    private javax.swing.JTextField TF_TipoProductoUpdate;
     private javax.swing.JTextField TF_UpcProducto;
     private javax.swing.JTextField TF_UsernameVendedor;
     private javax.swing.JTextField TF_nomProducto;
@@ -3216,6 +3367,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;

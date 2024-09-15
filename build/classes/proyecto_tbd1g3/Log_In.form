@@ -1917,29 +1917,6 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="CB_TamProductoUpdate" min="-2" pref="250" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel39" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
-                                  <Component id="jLabel41" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
-                                  <Component id="TF_nomProductoUpdate" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
-                                  <Component id="TF_EmbalajeProductoUpdate" min="-2" pref="250" max="-2" attributes="0"/>
-                                  <Component id="jLabel42" min="-2" pref="111" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel40" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
-                                  <Component id="jLabel37" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
-                                  <Component id="TF_MarcaProductoUpdate" alignment="0" pref="250" max="32767" attributes="0"/>
-                                  <Component id="TF_TipoProductoUpdate" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
@@ -1959,6 +1936,39 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel42" min="-2" pref="111" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel39" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Component id="jLabel41" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Component id="TF_nomProductoUpdate" alignment="0" pref="250" max="32767" attributes="0"/>
+                                  <Component id="TF_PrecioProductoUpdate" pref="250" max="32767" attributes="0"/>
+                                  <Component id="TF_ReOrdenProductoUpdate" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="CB_TamProductoUpdate" min="-2" pref="250" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jLabel40" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
+                                      <Component id="jLabel37" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
+                                      <Component id="TF_MarcaProductoUpdate" alignment="0" pref="250" max="32767" attributes="0"/>
+                                      <Component id="TF_CantidadProductoUpdate" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="421" max="32767" attributes="0"/>
+                          <Component id="jLabel48" min="-2" pref="111" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1994,19 +2004,29 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="TF_TipoProductoUpdate" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                          <Component id="TF_EmbalajeProductoUpdate" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="TF_CantidadProductoUpdate" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="TF_PrecioProductoUpdate" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel42" min="-2" pref="28" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="CB_TamProductoUpdate" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="CB_TamProductoUpdate" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="TF_ReOrdenProductoUpdate" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace pref="58" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btn_ConfUpdateProd" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="btn_salirUpdateProducto" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="284" max="32767" attributes="0"/>
+                          <Component id="jLabel48" min="-2" pref="28" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2066,12 +2086,12 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Tipo"/>
+                <Property name="text" type="java.lang.String" value="Cantidad"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="TF_nomProductoUpdate">
             </Component>
-            <Component class="javax.swing.JTextField" name="TF_TipoProductoUpdate">
+            <Component class="javax.swing.JTextField" name="TF_CantidadProductoUpdate">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel41">
               <Properties>
@@ -2081,7 +2101,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Embalaje"/>
+                <Property name="text" type="java.lang.String" value="Precio"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel42">
@@ -2092,10 +2112,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Tama&#xf1;o"/>
+                <Property name="text" type="java.lang.String" value="ReOrden"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="TF_EmbalajeProductoUpdate">
+            <Component class="javax.swing.JTextField" name="TF_PrecioProductoUpdate">
             </Component>
             <Component class="javax.swing.JComboBox" name="CB_TamProductoUpdate">
               <Properties>
@@ -2124,6 +2144,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Realizar Cambios"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_ConfUpdateProdMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn_salirUpdateProducto">
               <Properties>
@@ -2147,6 +2170,19 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/ImagenesTBD1/ProductosIcon.png"/>
                 </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="TF_ReOrdenProductoUpdate">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel48">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Franklin Gothic Medium" size="16" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Tama&#xf1;o"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -2314,6 +2350,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Modificar Cliente"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_ConfUpdateClientMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn_salirUpdateCliente">
               <Properties>
@@ -2733,6 +2772,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Actualizar Tienda"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_UpdateTiendaConfMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn_salirUpdateTienda">
               <Properties>
