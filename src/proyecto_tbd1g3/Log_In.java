@@ -65,6 +65,7 @@ public class Log_In extends javax.swing.JFrame {
         btn_TiposProducto = new javax.swing.JButton();
         btn_salirMain = new javax.swing.JButton();
         btn_MainVendedores = new javax.swing.JButton();
+        btn_ComprasxCliente = new javax.swing.JButton();
         JD_CrudClientes = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -245,6 +246,13 @@ public class Log_In extends javax.swing.JFrame {
         JD_ComprarProdCliente = new javax.swing.JDialog();
         jPanel20 = new javax.swing.JPanel();
         jLabel84 = new javax.swing.JLabel();
+        JD_ComprasxCliente = new javax.swing.JDialog();
+        jPanel22 = new javax.swing.JPanel();
+        jLabel85 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        JTB_ComprasCliente = new javax.swing.JTable();
+        btn_SalirComprasxCliente = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -449,6 +457,16 @@ public class Log_In extends javax.swing.JFrame {
             }
         });
 
+        btn_ComprasxCliente.setBackground(new java.awt.Color(204, 102, 0));
+        btn_ComprasxCliente.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        btn_ComprasxCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btn_ComprasxCliente.setText("ComprasxCliente");
+        btn_ComprasxCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_ComprasxClienteMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -472,7 +490,8 @@ public class Log_In extends javax.swing.JFrame {
                                 .addComponent(btn_ProdEstrella, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(44, 44, 44)
                                 .addComponent(btn_TiposProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btn_MainVendedores, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btn_MainVendedores, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_ComprasxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -504,7 +523,9 @@ public class Log_In extends javax.swing.JFrame {
                     .addComponent(btn_TiendasEstrella, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_ProdEstrella, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_TiposProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(82, 82, 82)
+                .addGap(26, 26, 26)
+                .addComponent(btn_ComprasxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addComponent(btn_salirMain, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -2245,6 +2266,74 @@ public class Log_In extends javax.swing.JFrame {
             .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        JD_ComprasxCliente.setTitle("Compras por Cliente Completas - Tiendas Circle K");
+
+        jPanel22.setBackground(new java.awt.Color(51, 51, 51));
+
+        jLabel85.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 24)); // NOI18N
+        jLabel85.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel85.setText("Compras Completas por Cliente");
+
+        jLabel33.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("La siguiente vista muestra las compras realizadas en tiendas, organizadas por clientes.");
+
+        jScrollPane8.setViewportView(JTB_ComprasCliente);
+
+        btn_SalirComprasxCliente.setBackground(new java.awt.Color(102, 0, 0));
+        btn_SalirComprasxCliente.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
+        btn_SalirComprasxCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btn_SalirComprasxCliente.setText("Salir");
+        btn_SalirComprasxCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_SalirComprasxClienteMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel22Layout.createSequentialGroup()
+                                .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_SalirComprasxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 827, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel85)
+                    .addComponent(btn_SalirComprasxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel33)
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout JD_ComprasxClienteLayout = new javax.swing.GroupLayout(JD_ComprasxCliente.getContentPane());
+        JD_ComprasxCliente.getContentPane().setLayout(JD_ComprasxClienteLayout);
+        JD_ComprasxClienteLayout.setHorizontalGroup(
+            JD_ComprasxClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        JD_ComprasxClienteLayout.setVerticalGroup(
+            JD_ComprasxClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Log In - Tiendas Circle K");
 
@@ -2836,6 +2925,52 @@ public class Log_In extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_CrearProductoMouseClicked
 
+    private void btn_ComprasxClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ComprasxClienteMouseClicked
+        try {
+            AdminDB dbcon = new AdminDB();
+            String dataToSelect = "select * from comprasxcliente";
+            rst = dbcon.ReturnResultSet(dataToSelect);
+
+
+            DefaultTableModel modeloCxC = new DefaultTableModel();
+            modeloCxC.addColumn("ID Cliente");
+            modeloCxC.addColumn("Nombre Cliente");
+            modeloCxC.addColumn("Numero Factura");
+            modeloCxC.addColumn("UPC Producto");
+            modeloCxC.addColumn("Nombre Producto");
+            modeloCxC.addColumn("Total Factura");
+            modeloCxC.addColumn("Fecha Factura");
+
+            while (rst.next()) {
+                String IDCliente = rst.getString("c_id");
+                String NomCliente = rst.getString("cliente_nombre");
+                String NumFact = rst.getString("factura_numero");
+                String UPC = rst.getString("producto_upc");
+                String NomProd = rst.getString("producto_nombre");
+                String TotalFact = rst.getString("factura_total");
+                String FechaFact = rst.getString("factura_fecha");
+                
+                Object[] obj = {IDCliente, NomCliente, NumFact, UPC, NomProd, TotalFact, FechaFact};
+                modeloCxC.addRow(obj);
+            }
+            JTB_ComprasCliente.setModel(modeloCxC);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        
+        JD_MainScreen.dispose();
+        AbrirVentana(JD_ComprasxCliente);
+    }//GEN-LAST:event_btn_ComprasxClienteMouseClicked
+
+    private void btn_SalirComprasxClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_SalirComprasxClienteMouseClicked
+        
+        
+        JD_ComprasxCliente.dispose();
+        AbrirVentana(JD_MainClientes);
+    }//GEN-LAST:event_btn_SalirComprasxClienteMouseClicked
+
     private String generateID() {
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         String id = "";
@@ -2897,6 +3032,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CB_TamProducto;
     private javax.swing.JComboBox<String> CB_TamProductoUpdate;
     private javax.swing.JDialog JD_ComprarProdCliente;
+    private javax.swing.JDialog JD_ComprasxCliente;
     private javax.swing.JDialog JD_CrudClientes;
     private javax.swing.JDialog JD_CrudProductos;
     private javax.swing.JDialog JD_CrudTiendas;
@@ -2916,6 +3052,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JDialog JD_UpdateProducto;
     private javax.swing.JDialog JD_UpdateTienda;
     private javax.swing.JDialog JD_UpdateVendedor;
+    private javax.swing.JTable JTB_ComprasCliente;
     private javax.swing.JTable JTB_ProductosEstrella;
     private javax.swing.JTable JTB_TablaClientes;
     private javax.swing.JTable JTB_TablaProductos;
@@ -2946,6 +3083,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JTextField TF_passVendedor;
     private javax.swing.JTextField TF_usernameCliente;
     private javax.swing.JButton btn_ComprarProduct;
+    private javax.swing.JButton btn_ComprasxCliente;
     private javax.swing.JButton btn_ConfInsertClient;
     private javax.swing.JButton btn_ConfInsertVendedor;
     private javax.swing.JButton btn_ConfUpdateClient;
@@ -2968,6 +3106,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JButton btn_ProdEstrella;
     private javax.swing.JButton btn_ProductosMain;
     private javax.swing.JButton btn_RegresarSignIn;
+    private javax.swing.JButton btn_SalirComprasxCliente;
     private javax.swing.JButton btn_SalirMenuClientes;
     private javax.swing.JButton btn_SalirProductosEstrella;
     private javax.swing.JButton btn_SalirTiendasEstrella;
@@ -3021,6 +3160,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
@@ -3074,6 +3214,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -3089,6 +3230,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -3103,6 +3245,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jtf_NombreUser;
