@@ -165,10 +165,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              </Group>
+              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -248,9 +245,9 @@
                           <Component id="btn_ProdEstrella" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
                           <Component id="btn_TiposProducto" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                       <Component id="btn_salirMain" min="-2" pref="36" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -649,28 +646,29 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="btn_InsertProducto" min="-2" pref="161" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="btn_UpdateProducto" min="-2" pref="161" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                              <Component id="btn_DeleteProducto" min="-2" pref="161" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel19" min="-2" pref="275" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jScrollPane2" min="-2" pref="918" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="btn_InsertProducto" min="-2" pref="161" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                      <Component id="btn_UpdateProducto" min="-2" pref="161" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                      <Component id="btn_DeleteProducto" min="-2" pref="161" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="329" max="-2" attributes="0"/>
+                                  </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel18" min="-2" pref="313" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="295" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="518" max="-2" attributes="0"/>
                                       <Component id="btn_salirAdminProds" min="-2" pref="87" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel19" min="-2" pref="275" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane2" min="-2" pref="695" max="-2" attributes="0"/>
-                                  </Group>
                               </Group>
-                              <EmptySpace min="0" pref="35" max="32767" attributes="0"/>
+                              <EmptySpace pref="37" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -680,19 +678,19 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel18" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="btn_salirAdminProds" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel18" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="btn_salirAdminProds" min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="26" max="32767" attributes="0"/>
+                      <EmptySpace pref="27" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btn_DeleteProducto" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                           <Component id="btn_UpdateProducto" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                           <Component id="btn_InsertProducto" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="jLabel19" min="-2" pref="35" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="342" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
@@ -708,7 +706,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Menu de Productos"/>
+                <Property name="text" type="java.lang.String" value="Administrador de Productos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btn_UpdateProducto">
@@ -865,16 +863,16 @@
                           <Component id="jLabel20" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                           <Component id="btn_salirAdminTiendas" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btn_InsertTienda" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                           <Component id="btn_UpdateTienda" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="32" max="32767" attributes="0"/>
+                      <EmptySpace pref="29" max="32767" attributes="0"/>
                       <Component id="jLabel21" min="-2" pref="35" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" min="-2" pref="353" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="217" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -996,34 +994,36 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="35" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel22" min="-2" pref="314" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="379" max="-2" attributes="0"/>
-                              <Component id="btn_SalirTiendasEstrella" min="-2" pref="105" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jScrollPane4" min="-2" pref="798" max="-2" attributes="0"/>
                           <Component id="jLabel82" alignment="0" min="-2" pref="648" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel22" min="-2" pref="314" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="btn_SalirTiendasEstrella" min="-2" pref="105" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPane4" alignment="0" min="-2" pref="682" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace pref="39" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel22" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="btn_SalirTiendasEstrella" alignment="1" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_SalirTiendasEstrella" min="-2" pref="32" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel82" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="jScrollPane4" min="-2" pref="356" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="jScrollPane4" min="-2" pref="215" max="-2" attributes="0"/>
+                      <EmptySpace pref="42" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1376,38 +1376,32 @@
                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="btn_CrearProducto" min="-2" pref="145" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btn_salirInsertProducto" min="-2" pref="106" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="TF_TiendaProducto" pref="250" max="32767" attributes="0"/>
+                                  <Component id="jLabel29" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="jLabel27" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
                                       <Component id="jLabel26" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
-                                      <Component id="jLabel29" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
-                                      <Component id="TF_UpcProducto" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="TF_UpcProducto" alignment="0" pref="250" max="32767" attributes="0"/>
                                       <Component id="TF_EmbalajeProducto" alignment="0" max="32767" attributes="0"/>
                                       <Component id="TF_nomProducto" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="jLabel33" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel28" min="-2" pref="111" max="-2" attributes="0"/>
-                                      <Component id="jLabel31" min="-2" pref="111" max="-2" attributes="0"/>
-                                      <Component id="jLabel30" min="-2" pref="111" max="-2" attributes="0"/>
-                                      <Component id="TF_MarcaProducto" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="TF_TipoProducto" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="CB_TamProducto" pref="250" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel34" min="-2" pref="209" max="-2" attributes="0"/>
-                                  <Component id="JS_CantidadProducto" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel28" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Component id="jLabel31" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Component id="jLabel30" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Component id="TF_MarcaProducto" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="TF_TipoProducto" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="CB_TamProducto" pref="250" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btn_CrearProducto" min="-2" pref="145" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btn_salirInsertProducto" min="-2" pref="106" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -1458,27 +1452,18 @@
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="29" max="32767" attributes="0"/>
+                              <EmptySpace pref="25" max="32767" attributes="0"/>
                               <Component id="jLabel29" min="-2" pref="28" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="TF_EmbalajeProducto" min="-2" pref="35" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel33" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="jLabel34" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="btn_CrearProducto" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="btn_salirInsertProducto" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="TF_TiendaProducto" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                          <Component id="JS_CantidadProducto" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btn_salirInsertProducto" pref="35" max="32767" attributes="0"/>
-                          <Component id="btn_CrearProducto" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1633,32 +1618,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Crear Producto"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel33">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Franklin Gothic Medium" size="16" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Tienda Perteneciente"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="TF_TiendaProducto">
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel34">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Franklin Gothic Medium" size="16" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Cantidad"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JSpinner" name="JS_CantidadProducto">
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_CrearProductoMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -1704,13 +1666,12 @@
                                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="TF_NombreCliente" alignment="1" min="-2" pref="260" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="jLabel48" min="-2" pref="150" max="-2" attributes="0"/>
                                                   <Component id="jLabel47" min="-2" pref="150" max="-2" attributes="0"/>
                                                   <Component id="jLabel50" min="-2" pref="150" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="TF_IDCliente" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                               <Component id="btn_ConfInsertClient" min="-2" pref="155" max="-2" attributes="0"/>
@@ -1732,19 +1693,17 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="btn_salirInsertCliente" min="-2" pref="106" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel46" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel46" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="btn_salirInsertCliente" min="-2" pref="106" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
                                           <Component id="TF_usernameCliente" min="-2" pref="260" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel49" min="-2" pref="150" max="-2" attributes="0"/>
-                                          <Component id="TF_passCliente" min="-2" pref="260" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="333" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <Component id="jLabel49" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="TF_passCliente" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           </Group>
@@ -1765,20 +1724,14 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel46" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="jLabel49" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jLabel46" min="-2" pref="28" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="TF_usernameCliente" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="TF_passCliente" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel48" min="-2" pref="28" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                      <Component id="TF_IDCliente" min="-2" pref="32" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="TF_usernameCliente" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="jLabel49" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="TF_passCliente" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="jLabel47" min="-2" pref="28" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="TF_NombreCliente" min="-2" pref="32" max="-2" attributes="0"/>
@@ -1791,7 +1744,7 @@
                           <Component id="btn_ConfInsertClient" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           <Component id="btn_salirInsertCliente" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="42" max="32767" attributes="0"/>
+                      <EmptySpace pref="26" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1848,17 +1801,6 @@
                 <Property name="text" type="java.lang.String" value="Nombre"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel48">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Franklin Gothic Medium" size="16" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="ID"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel49">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1883,8 +1825,6 @@
             </Component>
             <Component class="javax.swing.JTextField" name="TF_usernameCliente">
             </Component>
-            <Component class="javax.swing.JTextField" name="TF_IDCliente">
-            </Component>
             <Component class="javax.swing.JTextField" name="TF_NombreCliente">
             </Component>
             <Component class="javax.swing.JTextField" name="TF_CorreoCliente">
@@ -1904,6 +1844,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Registrar Cliente"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_ConfInsertClientMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn_salirInsertCliente">
               <Properties>
@@ -2568,6 +2511,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Registrar Tienda"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_CrearTiendaMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn_salirInsertTienda">
               <Properties>
@@ -2822,10 +2768,9 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="TF_NombreVendedor1" min="-2" pref="260" max="-2" attributes="0"/>
-                                  <Component id="TF_NombreVendedor2" min="-2" pref="260" max="-2" attributes="0"/>
+                                  <Component id="TF_UsernameVendedor" min="-2" pref="260" max="-2" attributes="0"/>
+                                  <Component id="TF_passVendedor" min="-2" pref="260" max="-2" attributes="0"/>
                                   <Component id="jLabel72" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="TF_IDVendedor" min="-2" pref="260" max="-2" attributes="0"/>
                                   <Component id="TF_NombreVendedor" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
                                   <Component id="jLabel73" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
                               </Group>
@@ -2839,7 +2784,6 @@
                                       <Component id="btn_salirInsertVendedor" min="-2" pref="106" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel70" min="-2" pref="150" max="-2" attributes="0"/>
                                       <Component id="jLabel71" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -2870,31 +2814,27 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel68" min="-2" pref="77" max="-2" attributes="0"/>
+                              <Component id="jLabel68" min="-2" pref="75" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jLabel72" min="-2" pref="28" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="TF_NombreVendedor1" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="TF_UsernameVendedor" min="-2" pref="33" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel73" min="-2" pref="28" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="TF_NombreVendedor2" min="-2" pref="33" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="jLabel70" min="-2" pref="28" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="TF_IDVendedor" min="-2" pref="33" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="TF_passVendedor" min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Component id="jLabel71" min="-2" pref="28" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="TF_NombreVendedor" min="-2" pref="33" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btn_ConfInsertVendedor" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           <Component id="btn_salirInsertVendedor" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="39" max="32767" attributes="0"/>
+                      <EmptySpace pref="27" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2929,19 +2869,6 @@
                 <Property name="text" type="java.lang.String" value="Para registrar un vendedor, ingrese los siguientes datos."/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel70">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Franklin Gothic Medium" size="16" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="ID Vendedor"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="TF_IDVendedor">
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel71">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -2966,7 +2893,7 @@
                 <Property name="text" type="java.lang.String" value="Nombre de Usuario"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="TF_NombreVendedor1">
+            <Component class="javax.swing.JTextField" name="TF_UsernameVendedor">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel73">
               <Properties>
@@ -2979,7 +2906,7 @@
                 <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="TF_NombreVendedor2">
+            <Component class="javax.swing.JTextField" name="TF_passVendedor">
             </Component>
             <Component class="javax.swing.JButton" name="btn_salirInsertVendedor">
               <Properties>
@@ -3011,6 +2938,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Registrar Vendedor"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_ConfInsertVendedorMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -3233,8 +3163,8 @@
                       </Group>
                       <Component id="jLabel79" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="jScrollPane6" min="-2" pref="384" max="-2" attributes="0"/>
-                      <EmptySpace pref="39" max="32767" attributes="0"/>
+                      <Component id="jScrollPane6" min="-2" pref="189" max="-2" attributes="0"/>
+                      <EmptySpace pref="46" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -3295,6 +3225,9 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JDialog" name="JD_CrudVendedores">
+      <Properties>
+        <Property name="title" type="java.lang.String" value="Administrador de Vendedores - Tiendas Circle K"/>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
