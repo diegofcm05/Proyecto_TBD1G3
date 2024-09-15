@@ -21,6 +21,10 @@ public class Log_In extends javax.swing.JFrame {
     SecureRandom sr = new SecureRandom();
     PreparedStatement pst = null;
     ResultSet rst = null;
+    String vendToUpdate = "";
+    String clienteToUpdate = "";
+    String tiendaToUpdate = "";
+    String productoToUpdate = "";
 
     //AdminDB bd = new AdminDB();
     /**
@@ -219,7 +223,7 @@ public class Log_In extends javax.swing.JFrame {
         jLabel74 = new javax.swing.JLabel();
         jLabel75 = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
-        TF_NombreVendedor3 = new javax.swing.JTextField();
+        TF_NombreVendedorUpdate = new javax.swing.JTextField();
         jLabel77 = new javax.swing.JLabel();
         btn_ConfUpdateVend = new javax.swing.JButton();
         btn_salirUpdateVend = new javax.swing.JButton();
@@ -1958,6 +1962,11 @@ public class Log_In extends javax.swing.JFrame {
         btn_ConfUpdateVend.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
         btn_ConfUpdateVend.setForeground(new java.awt.Color(255, 255, 255));
         btn_ConfUpdateVend.setText("Modificar Vendedor");
+        btn_ConfUpdateVend.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_ConfUpdateVendMouseClicked(evt);
+            }
+        });
 
         btn_salirUpdateVend.setBackground(new java.awt.Color(153, 0, 0));
         btn_salirUpdateVend.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
@@ -1977,7 +1986,7 @@ public class Log_In extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TF_NombreVendedor3, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_NombreVendedorUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel17Layout.createSequentialGroup()
                             .addComponent(btn_ConfUpdateVend)
@@ -2004,7 +2013,7 @@ public class Log_In extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TF_NombreVendedor3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TF_NombreVendedorUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btn_ConfUpdateVend, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2827,8 +2836,23 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_InsertVendedorMouseClicked
 
     private void btn_UpdateVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UpdateVendedorMouseClicked
-        JD_CrudVendedores.dispose();
-        AbrirVentana(JD_UpdateVendedor);
+        if (JTB_VendedoresAct.getSelectedRow()>=0){
+            String Oldnombre = JTB_VendedoresAct.getValueAt(JTB_VendedoresAct.getSelectedRow(), 1).toString();
+            vendToUpdate = JTB_VendedoresAct.getValueAt(JTB_VendedoresAct.getSelectedRow(), 0).toString();
+
+            System.out.println("nombre seleccionado = "+Oldnombre);
+            TF_NombreVendedorUpdate.setText(Oldnombre);
+
+
+            JD_CrudVendedores.dispose();
+            AbrirVentana(JD_UpdateVendedor);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Tiene que seleccionar una fila para modificar.");
+        }
+        
+       
+        
     }//GEN-LAST:event_btn_UpdateVendedorMouseClicked
 
     private void btn_DeleteVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DeleteVendedorMouseClicked
@@ -2879,7 +2903,6 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ConfInsertClientMouseClicked
 
     private void btn_ConfInsertVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ConfInsertVendedorMouseClicked
-        //NOT FINISHED
         
         if (!TF_UsernameVendedor.getText().equals("") && !TF_passVendedor.getText().equals("") && !TF_NombreVendedor.getText().equals("")){
             AdminDB bd = new AdminDB();
@@ -2894,7 +2917,7 @@ public class Log_In extends javax.swing.JFrame {
             //Llamado de Procedimiento para insertar usuario
             bd.Ingreso("CALL insertar_usuario('"+id+"', '"+usernm+"', '"+password+"', 'Vendedor');");
             
-            //Llamado de Procedimento para insertar cliente
+            //Llamado de Procedimento para insertar vendedor
             bd.Ingreso("CALL insertar_vendedor('"+id+"', '"+realname+"');");
         }
         else{
@@ -2966,10 +2989,28 @@ public class Log_In extends javax.swing.JFrame {
 
     private void btn_SalirComprasxClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_SalirComprasxClienteMouseClicked
         
-        
         JD_ComprasxCliente.dispose();
         AbrirVentana(JD_MainClientes);
     }//GEN-LAST:event_btn_SalirComprasxClienteMouseClicked
+
+    private void btn_ConfUpdateVendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ConfUpdateVendMouseClicked
+        if (!TF_NombreVendedorUpdate.getText().equals("")){
+            AdminDB bd = new AdminDB();
+            
+            String realname = TF_NombreVendedorUpdate.getText();
+
+            //Llamado de Procedimento para actualizar vendedor
+            bd.Ingreso("CALL actualizar_vendedor('"+vendToUpdate+"', '"+realname+"');");
+            vendToUpdate = "";
+            
+            JD_UpdateVendedor.dispose();
+            AbrirVentana(JD_MainScreen);
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Para actualizar, llene todos los campos necesarios.");
+        }
+    }//GEN-LAST:event_btn_ConfUpdateVendMouseClicked
 
     private String generateID() {
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -3072,7 +3113,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JTextField TF_NombreTienda;
     private javax.swing.JTextField TF_NombreTienda1;
     private javax.swing.JTextField TF_NombreVendedor;
-    private javax.swing.JTextField TF_NombreVendedor3;
+    private javax.swing.JTextField TF_NombreVendedorUpdate;
     private javax.swing.JTextField TF_TipoProducto;
     private javax.swing.JTextField TF_TipoProductoUpdate;
     private javax.swing.JTextField TF_UpcProducto;

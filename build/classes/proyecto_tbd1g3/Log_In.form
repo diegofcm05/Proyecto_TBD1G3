@@ -2998,7 +2998,7 @@
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel76" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="TF_NombreVendedor3" alignment="0" min="-2" pref="320" max="-2" attributes="0"/>
+                          <Component id="TF_NombreVendedorUpdate" alignment="0" min="-2" pref="320" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="btn_ConfUpdateVend" min="-2" max="-2" attributes="0"/>
@@ -3034,7 +3034,7 @@
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="jLabel76" min="-2" pref="28" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="TF_NombreVendedor3" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="TF_NombreVendedorUpdate" min="-2" pref="33" max="-2" attributes="0"/>
                       <EmptySpace pref="72" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="btn_ConfUpdateVend" min="-2" pref="37" max="-2" attributes="0"/>
@@ -3079,7 +3079,7 @@
                 <Property name="text" type="java.lang.String" value="Nombre"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="TF_NombreVendedor3">
+            <Component class="javax.swing.JTextField" name="TF_NombreVendedorUpdate">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel77">
               <Properties>
@@ -3101,6 +3101,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Modificar Vendedor"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_ConfUpdateVendMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn_salirUpdateVend">
               <Properties>
