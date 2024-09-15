@@ -23,8 +23,8 @@ public class AdminDB {
     public void Conectarme(){
         try {
             conexion = DriverManager.getConnection(url, user, pass);
-            JOptionPane.showMessageDialog(null, "Conectado exitosamente.\n"
-                    + "Cargando Datos...");
+            //JOptionPane.showMessageDialog(null, "Conectado exitosamente.\n"
+                    //+ "Cargando Datos...");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Ocurrio un error en Conectarme");
             ex.printStackTrace();
@@ -37,7 +37,7 @@ public class AdminDB {
         try {
             p = conexion.prepareStatement(script);
             p.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Ejecucion completa");
+            JOptionPane.showMessageDialog(null, "Ejecucion de consulta completa.");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Ocurrio un error en ingreso");
             ex.printStackTrace();
