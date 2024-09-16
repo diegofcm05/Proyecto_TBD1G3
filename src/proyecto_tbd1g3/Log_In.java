@@ -778,6 +778,11 @@ public class Log_In extends javax.swing.JFrame {
         btn_DeleteProducto.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
         btn_DeleteProducto.setForeground(new java.awt.Color(255, 255, 255));
         btn_DeleteProducto.setText("Eliminar Producto");
+        btn_DeleteProducto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_DeleteProductoMouseClicked(evt);
+            }
+        });
 
         jScrollPane2.setViewportView(JTB_TablaProductos);
 
@@ -4266,6 +4271,43 @@ public class Log_In extends javax.swing.JFrame {
             this.setVisible(true);
         }
     }//GEN-LAST:event_btn_SalirMenuVendedorMouseClicked
+
+    private void btn_DeleteProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DeleteProductoMouseClicked
+        if (JTB_TablaProductos.getSelectedRow()>=0){
+            int decision = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar este producto?", "Eliminar Cliente", JOptionPane.YES_NO_OPTION);
+            
+            if (decision == 0){
+                
+                try {
+                    AdminDB bd = new AdminDB();
+                    //String Oldnombre = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 1).toString();
+                    productoToUpdate = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 1).toString();
+
+                    //Llamado de Procedimento para eliminar cliente
+                    bd.Ingreso("CALL eliminar_producto('"+productoToUpdate+"');");                                                                          
+                    productoToUpdate = "";
+                    //Remueve el cliente de la tabla activa
+                    DefaultTableModel model = (DefaultTableModel) JTB_TablaProductos.getModel();
+                    model.removeRow(JTB_TablaProductos.getSelectedRow());
+                    JTB_TablaProductos.setModel(model);
+                    
+
+                    JOptionPane.showMessageDialog(null, "El producto ha sido eliminado exitosamente.");
+                    //System.out.println("nombre seleccionado = "+Oldnombre);
+
+                    
+                } catch (Exception exp) {
+                    exp.printStackTrace();
+                }
+                
+            }
+           
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Tiene que seleccionar un cliente para eliminar.");
+        }
+            
+    }//GEN-LAST:event_btn_DeleteProductoMouseClicked
 
     private String generateID() {
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
