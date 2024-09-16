@@ -20,6 +20,7 @@ public class Log_In extends javax.swing.JFrame {
     String CurrentUserRole = "";
     String CurrentuName = "";
     String CurrentPass = "";
+    String CurrentID = "";
     SecureRandom sr = new SecureRandom();
     PreparedStatement pst = null;
     ResultSet rst = null;
@@ -28,6 +29,8 @@ public class Log_In extends javax.swing.JFrame {
     String tiendaToUpdate = "";
     String productoToUpdate = "";
     String productoUPCToUpdate = "";
+    boolean compraFinalizada = false;
+    String currentFactNum = "";
 
     //AdminDB bd = new AdminDB();
     /**
@@ -257,9 +260,20 @@ public class Log_In extends javax.swing.JFrame {
         JD_FacturaCliente = new javax.swing.JDialog();
         jPanel21 = new javax.swing.JPanel();
         jLabel83 = new javax.swing.JLabel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        JTB_FacturaEspecifica = new javax.swing.JTable();
+        jLabel94 = new javax.swing.JLabel();
+        btn_salirFacturaCliente = new javax.swing.JButton();
         JD_ComprarProdCliente = new javax.swing.JDialog();
         jPanel20 = new javax.swing.JPanel();
         jLabel84 = new javax.swing.JLabel();
+        jLabel93 = new javax.swing.JLabel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        JTB_CompraProdCliente = new javax.swing.JTable();
+        jLabel34 = new javax.swing.JLabel();
+        btn_ClienteBuy = new javax.swing.JButton();
+        btn_SalirComprarProdCliente = new javax.swing.JButton();
+        jLabel70 = new javax.swing.JLabel();
         JD_ComprasxCliente = new javax.swing.JDialog();
         jPanel22 = new javax.swing.JPanel();
         jLabel85 = new javax.swing.JLabel();
@@ -300,6 +314,8 @@ public class Log_In extends javax.swing.JFrame {
         btn_LogInConf = new javax.swing.JButton();
         btn_SignIn = new javax.swing.JButton();
         btn_probarAWS = new javax.swing.JButton();
+
+        JD_SignIn.setTitle("Sign In - Circle K");
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -637,6 +653,11 @@ public class Log_In extends javax.swing.JFrame {
         btn_DeleteCliente.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
         btn_DeleteCliente.setForeground(new java.awt.Color(255, 255, 255));
         btn_DeleteCliente.setText("Eliminar Cliente");
+        btn_DeleteCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_DeleteClienteMouseClicked(evt);
+            }
+        });
 
         jScrollPane1.setViewportView(JTB_TablaClientes);
 
@@ -1081,11 +1102,21 @@ public class Log_In extends javax.swing.JFrame {
         btn_ComprarProduct.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 18)); // NOI18N
         btn_ComprarProduct.setForeground(new java.awt.Color(255, 255, 255));
         btn_ComprarProduct.setText("Comprar Productos");
+        btn_ComprarProduct.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_ComprarProductMouseClicked(evt);
+            }
+        });
 
         btn_FactCliente.setBackground(new java.awt.Color(255, 102, 0));
         btn_FactCliente.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 18)); // NOI18N
         btn_FactCliente.setForeground(new java.awt.Color(255, 255, 255));
-        btn_FactCliente.setText("Ver Factura");
+        btn_FactCliente.setText("Ver Facturas");
+        btn_FactCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_FactClienteMouseClicked(evt);
+            }
+        });
 
         btn_SalirMenuClientes.setBackground(new java.awt.Color(153, 0, 0));
         btn_SalirMenuClientes.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
@@ -2332,11 +2363,29 @@ public class Log_In extends javax.swing.JFrame {
             .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        JD_FacturaCliente.setTitle("Factura de Cliente - Circle K");
+
         jPanel21.setBackground(new java.awt.Color(51, 51, 51));
 
         jLabel83.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 24)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel83.setText("Facturacion por Cliente");
+        jLabel83.setText("Facturas de Cliente Especifico");
+
+        jScrollPane13.setViewportView(JTB_FacturaEspecifica);
+
+        jLabel94.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        jLabel94.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel94.setText("En esta ventana puede ver su historial de facturas.");
+
+        btn_salirFacturaCliente.setBackground(new java.awt.Color(102, 0, 0));
+        btn_salirFacturaCliente.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
+        btn_salirFacturaCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btn_salirFacturaCliente.setText("Salir");
+        btn_salirFacturaCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_salirFacturaClienteMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -2344,15 +2393,31 @@ public class Log_In extends javax.swing.JFrame {
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel83, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(536, Short.MAX_VALUE))
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel83, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel94, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(128, 128, 128)
+                        .addComponent(btn_salirFacturaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel83)
-                .addContainerGap(423, Short.MAX_VALUE))
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addComponent(jLabel83)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel94))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(btn_salirFacturaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout JD_FacturaClienteLayout = new javax.swing.GroupLayout(JD_FacturaCliente.getContentPane());
@@ -2363,8 +2428,10 @@ public class Log_In extends javax.swing.JFrame {
         );
         JD_FacturaClienteLayout.setVerticalGroup(
             JD_FacturaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+
+        JD_ComprarProdCliente.setTitle("Compra de Productos - Circle K");
 
         jPanel20.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -2372,21 +2439,83 @@ public class Log_In extends javax.swing.JFrame {
         jLabel84.setForeground(new java.awt.Color(255, 255, 255));
         jLabel84.setText("Comprar Productos");
 
+        jLabel93.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel93.setText("Seleccione el producto que desee comprar. Al seleccionar, oprima el boton de 'Comprar'.");
+
+        jScrollPane12.setViewportView(JTB_CompraProdCliente);
+
+        jLabel34.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setText("Esto se agregara a su factura, que puede ver en el boton de 'Mi Factura'.");
+
+        btn_ClienteBuy.setBackground(new java.awt.Color(0, 51, 102));
+        btn_ClienteBuy.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
+        btn_ClienteBuy.setForeground(new java.awt.Color(255, 255, 255));
+        btn_ClienteBuy.setText("Comprar Producto");
+        btn_ClienteBuy.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_ClienteBuyMouseClicked(evt);
+            }
+        });
+
+        btn_SalirComprarProdCliente.setBackground(new java.awt.Color(102, 0, 0));
+        btn_SalirComprarProdCliente.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
+        btn_SalirComprarProdCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btn_SalirComprarProdCliente.setText("Salir");
+        btn_SalirComprarProdCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_SalirComprarProdClienteMouseClicked(evt);
+            }
+        });
+
+        jLabel70.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel70.setText("Al presionar el boton de salir, finalizara su compra actual y se guardara su factura.");
+
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel84, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(532, Short.MAX_VALUE))
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel84, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel20Layout.createSequentialGroup()
+                                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel93, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE))
+                                .addGap(26, 26, 26)
+                                .addComponent(btn_ClienteBuy, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(btn_SalirComprarProdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 917, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(jLabel84)
-                .addContainerGap(438, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addComponent(jLabel93)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel34))
+                    .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btn_ClienteBuy, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_SalirComprarProdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel70)
+                .addGap(24, 24, 24)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout JD_ComprarProdClienteLayout = new javax.swing.GroupLayout(JD_ComprarProdCliente.getContentPane());
@@ -2536,6 +2665,8 @@ public class Log_In extends javax.swing.JFrame {
             .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        JD_CocavsPepsi.setTitle("Tiendas Coca vs. Pepsi - Circle K");
+
         jPanel24.setBackground(new java.awt.Color(51, 51, 51));
 
         jLabel89.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 24)); // NOI18N
@@ -2609,6 +2740,8 @@ public class Log_In extends javax.swing.JFrame {
             JD_CocavsPepsiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        JD_VentasxTienda.setTitle("Tabla de Ventas - Circle K");
 
         jPanel25.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -2833,6 +2966,8 @@ public class Log_In extends javax.swing.JFrame {
                 
                 if (rst.next()){
                     CurrentUserRole = rst.getString("rol");
+                    CurrentID = rst.getString("us_id");
+                    System.out.println("Current ID is: "+CurrentID);
                     
                     if (CurrentUserRole.equals("Admin")){
                         this.setVisible(false);
@@ -3335,11 +3470,14 @@ public class Log_In extends javax.swing.JFrame {
                     String Oldnombre = JTB_VendedoresAct.getValueAt(JTB_VendedoresAct.getSelectedRow(), 1).toString();
                     vendToUpdate = JTB_VendedoresAct.getValueAt(JTB_VendedoresAct.getSelectedRow(), 0).toString();
 
-                    //Llamado de Procedimento para actualizar vendedor
+                    //Llamado de Procedimento para eliminar vendedor
                     bd.Ingreso("CALL eliminar_vendedor('"+vendToUpdate+"');");
+                   
+                    
+                    //Llamado de Procedimiento para eliminar usuario, si existe
+                    bd.Ingreso("CALL eliminar_usuario('"+vendToUpdate+"');");
+                    
                     vendToUpdate = "";
-                    
-                    
                     //Remueve el vendedor de la tabla activa
                     DefaultTableModel model = (DefaultTableModel) JTB_VendedoresAct.getModel();
                     model.removeRow(JTB_VendedoresAct.getSelectedRow());
@@ -3658,9 +3796,9 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_SalirCocaPepsiMouseClicked
 
     private void btn_DeleteTiendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DeleteTiendaMouseClicked
-        //Este metodo solo es copia del de delete vendedor, aun no esta terminado
+        
         if (JTB_TablaTiendas.getSelectedRow()>=0){
-            int decision = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar esta tienda\nEsto causara que su inventario, ubicaciones y?", "Eliminar Vendedor", JOptionPane.YES_NO_OPTION);
+            int decision = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar esta tienda\nEsto causara que su inventario, ubicaciones y?", "Eliminar Tienda", JOptionPane.YES_NO_OPTION);
             
             if (decision == 0){
                 
@@ -3669,12 +3807,12 @@ public class Log_In extends javax.swing.JFrame {
                     String Oldnombre = JTB_TablaTiendas.getValueAt(JTB_TablaTiendas.getSelectedRow(), 1).toString();
                     tiendaToUpdate = JTB_TablaTiendas.getValueAt(JTB_TablaTiendas.getSelectedRow(), 0).toString();
 
-                    //Llamado de Procedimento para actualizar vendedor
+                    //Llamado de Procedimento para eliminar tienda
                     bd.Ingreso("CALL eliminar_tienda('"+tiendaToUpdate+"');");
                     tiendaToUpdate = "";
                     
                     
-                    //Remueve el vendedor de la tabla activa
+                    //Remueve la tienda de la tabla activa
                     DefaultTableModel model = (DefaultTableModel) JTB_TablaTiendas.getModel();
                     model.removeRow(JTB_TablaTiendas.getSelectedRow());
                     JTB_TablaTiendas.setModel(model);
@@ -3734,6 +3872,177 @@ public class Log_In extends javax.swing.JFrame {
         JD_VentasxTienda.dispose();
         AbrirVentana(JD_MainScreen);
     }//GEN-LAST:event_btn_SalirVentasxTiendaMouseClicked
+
+    private void btn_DeleteClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DeleteClienteMouseClicked
+        if (JTB_TablaClientes.getSelectedRow()>=0){
+            int decision = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar este cliente?", "Eliminar Cliente", JOptionPane.YES_NO_OPTION);
+            
+            if (decision == 0){
+                
+                try {
+                    AdminDB bd = new AdminDB();
+                    String Oldnombre = JTB_TablaClientes.getValueAt(JTB_TablaClientes.getSelectedRow(), 1).toString();
+                    clienteToUpdate = JTB_TablaClientes.getValueAt(JTB_TablaClientes.getSelectedRow(), 0).toString();
+
+                    //Llamado de Procedimento para eliminar cliente
+                    bd.Ingreso("CALL eliminar_cliente('"+clienteToUpdate+"');");
+                   
+                    
+                    //Llamado de Procedimiento para eliminar usuario, si existe
+                    bd.Ingreso("CALL eliminar_usuario('"+clienteToUpdate+"');");
+                    
+                    clienteToUpdate = "";
+                    //Remueve el cliente de la tabla activa
+                    DefaultTableModel model = (DefaultTableModel) JTB_TablaClientes.getModel();
+                    model.removeRow(JTB_TablaClientes.getSelectedRow());
+                    JTB_TablaClientes.setModel(model);
+                    
+
+                    JOptionPane.showMessageDialog(null, "El cliente ha sido eliminado exitosamente.");
+                    System.out.println("nombre seleccionado = "+Oldnombre);
+
+                    
+                } catch (Exception exp) {
+                    exp.printStackTrace();
+                }
+                
+            }
+           
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Tiene que seleccionar un cliente para eliminar.");
+        }
+                
+    }//GEN-LAST:event_btn_DeleteClienteMouseClicked
+
+    private void btn_SalirComprarProdClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_SalirComprarProdClienteMouseClicked
+        JD_ComprarProdCliente.dispose();
+        AbrirVentana(JD_MainClientes);
+    }//GEN-LAST:event_btn_SalirComprarProdClienteMouseClicked
+
+    private void btn_ComprarProductMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ComprarProductMouseClicked
+        
+        try {
+            AdminDB dbcon = new AdminDB();
+            String dataToSelect = "select * from inventory";
+            rst = dbcon.ReturnResultSet(dataToSelect);
+
+
+            DefaultTableModel modeloPR = new DefaultTableModel();
+            modeloPR.addColumn("ID Tienda");
+            modeloPR.addColumn("UPC");
+            modeloPR.addColumn("Nombre");
+            modeloPR.addColumn("Tamaño");
+            modeloPR.addColumn("Marca");
+            modeloPR.addColumn("Precio");
+            modeloPR.addColumn("Cantidad");
+            modeloPR.addColumn("Reorden");
+            
+
+            while (rst.next()) {
+                String IDTienda = rst.getString("t_id");
+                String UPC = rst.getString("upc");
+                String Nombre_Producto = rst.getString("nombre");
+                String Tam = rst.getString("tamaño");
+                String Marca = rst.getString("marca");
+                String Precio = rst.getString("precio");
+                String Cantidad = rst.getString("cantidad");
+                String Reorden = rst.getString("reorden");
+                
+                Object[] obj = {IDTienda, UPC, Nombre_Producto, Tam, Marca, Precio, Cantidad, Reorden};
+                modeloPR.addRow(obj);
+            }
+            JTB_CompraProdCliente.setModel(modeloPR);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        currentFactNum = "F" + generateID().substring(0, 5);
+        System.out.println("El numero de factura generado es: " + currentFactNum);
+        JD_MainClientes.dispose();
+        AbrirVentana(JD_ComprarProdCliente);
+    }//GEN-LAST:event_btn_ComprarProductMouseClicked
+
+    private void btn_ClienteBuyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ClienteBuyMouseClicked
+        try {
+            
+            if (JTB_CompraProdCliente.getSelectedRow() >= 0){
+                AdminDB bd = new AdminDB();
+                String dataToSelect = "select * from factura where numero = '"+currentFactNum+"'";
+                rst = bd.ReturnResultSet(dataToSelect);
+
+                String IDtienda = JTB_CompraProdCliente.getValueAt(JTB_CompraProdCliente.getSelectedRow(), 0).toString();
+                String upc = JTB_CompraProdCliente.getValueAt(JTB_CompraProdCliente.getSelectedRow(), 1).toString();
+                String nomProd = JTB_CompraProdCliente.getValueAt(JTB_CompraProdCliente.getSelectedRow(), 2).toString();
+
+
+                //Verificar si existe la factura para ese cliente
+                if (rst.next()){
+                    //Si existe, agregar a detalles_factura solamente
+                    bd.Ingreso("insert into detalles_factura (numero, upc) values ('"+currentFactNum+"', '"+upc+"');");
+
+                }
+                else{
+                    //Si no existe, crear una nueva factura
+                    bd.Ingreso("insert into factura (numero, t_id, c_id, fecha, subtotal, isv, total) values ('"+currentFactNum+"', '"+IDtienda+"', '"+CurrentID+"', '2024-09-16', '300', '20', '360');");
+
+                    //Luego, agregar a detalles_factura
+                    bd.Ingreso("insert into detalles_factura (numero, upc) values ('"+currentFactNum+"', '"+upc+"');");
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Seleccione un producto para comprar");
+            }
+   
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_btn_ClienteBuyMouseClicked
+
+    private void btn_salirFacturaClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirFacturaClienteMouseClicked
+        JD_FacturaCliente.dispose();
+        AbrirVentana(JD_MainClientes);
+    }//GEN-LAST:event_btn_salirFacturaClienteMouseClicked
+
+    private void btn_FactClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FactClienteMouseClicked
+        try {
+            AdminDB dbcon = new AdminDB();
+            String dataToSelect = "select * from comprasbycliente('"+CurrentID+"')";
+            rst = dbcon.ReturnResultSet(dataToSelect);
+
+
+            DefaultTableModel modeloHT = new DefaultTableModel();
+            modeloHT.addColumn("ID Cliente");
+            modeloHT.addColumn("Nombre Cliente");
+            modeloHT.addColumn("Numero Factura");
+            modeloHT.addColumn("UPC Producto");
+            modeloHT.addColumn("Nombre Producto");
+            modeloHT.addColumn("Total Factura");
+            modeloHT.addColumn("Fecha");
+
+            while (rst.next()) {
+                String IDC = rst.getString("c_id");
+                String NC = rst.getString("c_nombre");
+                String Num = rst.getString("numero");
+                String upc = rst.getString("upc");
+                String prodn = rst.getString("producto");
+                String total = rst.getString("total");
+                String FF = rst.getString("fecha");
+                
+                
+                Object[] obj = {IDC, NC, Num, upc, prodn, total, FF};
+                modeloHT.addRow(obj);
+            }
+            JTB_FacturaEspecifica.setModel(modeloHT);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        
+        JD_MainClientes.dispose();
+        AbrirVentana(JD_FacturaCliente);
+    }//GEN-LAST:event_btn_FactClienteMouseClicked
 
     private String generateID() {
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -3820,7 +4129,9 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JDialog JD_UpdateVendedor;
     private javax.swing.JDialog JD_VentasxTienda;
     private javax.swing.JTable JTB_CocaPepsi;
+    private javax.swing.JTable JTB_CompraProdCliente;
     private javax.swing.JTable JTB_ComprasCliente;
+    private javax.swing.JTable JTB_FacturaEspecifica;
     private javax.swing.JTable JTB_ProductosEstrella;
     private javax.swing.JTable JTB_ProductosxPais;
     private javax.swing.JTable JTB_TablaClientes;
@@ -3853,6 +4164,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JTextField TF_passCliente;
     private javax.swing.JTextField TF_passVendedor;
     private javax.swing.JTextField TF_usernameCliente;
+    private javax.swing.JButton btn_ClienteBuy;
     private javax.swing.JButton btn_CocavsPepsi;
     private javax.swing.JButton btn_ComprarProduct;
     private javax.swing.JButton btn_ComprasxCliente;
@@ -3882,6 +4194,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JButton btn_ProdxPais;
     private javax.swing.JButton btn_RegresarSignIn;
     private javax.swing.JButton btn_SalirCocaPepsi;
+    private javax.swing.JButton btn_SalirComprarProdCliente;
     private javax.swing.JButton btn_SalirComprasxCliente;
     private javax.swing.JButton btn_SalirMenuClientes;
     private javax.swing.JButton btn_SalirProductosEstrella;
@@ -3902,6 +4215,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JButton btn_salirAdminProds;
     private javax.swing.JButton btn_salirAdminTiendas;
     private javax.swing.JButton btn_salirCrudVend;
+    private javax.swing.JButton btn_salirFacturaCliente;
     private javax.swing.JButton btn_salirInsertCliente;
     private javax.swing.JButton btn_salirInsertProducto;
     private javax.swing.JButton btn_salirInsertTienda;
@@ -3939,6 +4253,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
@@ -3978,6 +4293,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
@@ -4002,6 +4318,8 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -4030,6 +4348,8 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;

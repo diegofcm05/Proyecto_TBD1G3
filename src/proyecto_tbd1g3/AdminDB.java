@@ -39,8 +39,9 @@ public class AdminDB {
             p.executeUpdate();
             JOptionPane.showMessageDialog(null, "Ejecucion de consulta completa.");
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Ocurrio un error en ingreso");
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Ocurrio un error en la consulta.\n"+ex.getMessage());
+            
+            //ex.printStackTrace();
         }
     }
     
