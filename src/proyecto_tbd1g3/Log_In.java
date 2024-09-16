@@ -17,7 +17,9 @@ import javax.swing.table.DefaultTableModel;
  * @author dfcm9
  */
 public class Log_In extends javax.swing.JFrame {
-    
+    String CurrentUserRole = "";
+    String CurrentuName = "";
+    String CurrentPass = "";
     SecureRandom sr = new SecureRandom();
     PreparedStatement pst = null;
     ResultSet rst = null;
@@ -71,6 +73,8 @@ public class Log_In extends javax.swing.JFrame {
         btn_salirMain = new javax.swing.JButton();
         btn_MainVendedores = new javax.swing.JButton();
         btn_ComprasxCliente = new javax.swing.JButton();
+        btn_ProdxPais = new javax.swing.JButton();
+        btn_CocavsPepsi = new javax.swing.JButton();
         JD_CrudClientes = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -100,6 +104,8 @@ public class Log_In extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         JTB_TablaTiendas = new javax.swing.JTable();
         jLabel21 = new javax.swing.JLabel();
+        btn_DeleteTienda = new javax.swing.JButton();
+        btn_MostrarVentas = new javax.swing.JButton();
         JD_TiendasEstrella = new javax.swing.JDialog();
         jPanel8 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
@@ -113,6 +119,7 @@ public class Log_In extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         JTB_ProductosEstrella = new javax.swing.JTable();
         btn_SalirProductosEstrella = new javax.swing.JButton();
+        jLabel86 = new javax.swing.JLabel();
         JD_MainClientes = new javax.swing.JDialog();
         jPanel5 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -246,7 +253,7 @@ public class Log_In extends javax.swing.JFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         JTB_VendedoresAct = new javax.swing.JTable();
         btn_DeleteVendedor = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btn_salirCrudVend = new javax.swing.JButton();
         JD_FacturaCliente = new javax.swing.JDialog();
         jPanel21 = new javax.swing.JPanel();
         jLabel83 = new javax.swing.JLabel();
@@ -260,6 +267,27 @@ public class Log_In extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         JTB_ComprasCliente = new javax.swing.JTable();
         btn_SalirComprasxCliente = new javax.swing.JButton();
+        JD_ProductosxPais = new javax.swing.JDialog();
+        jPanel23 = new javax.swing.JPanel();
+        jLabel87 = new javax.swing.JLabel();
+        jLabel88 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        JTB_ProductosxPais = new javax.swing.JTable();
+        btn_SalirProductosxPais = new javax.swing.JButton();
+        JD_CocavsPepsi = new javax.swing.JDialog();
+        jPanel24 = new javax.swing.JPanel();
+        jLabel89 = new javax.swing.JLabel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        JTB_CocaPepsi = new javax.swing.JTable();
+        jLabel90 = new javax.swing.JLabel();
+        btn_SalirCocaPepsi = new javax.swing.JButton();
+        JD_VentasxTienda = new javax.swing.JDialog();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel91 = new javax.swing.JLabel();
+        jLabel92 = new javax.swing.JLabel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        JTB_VentasxTienda = new javax.swing.JTable();
+        btn_SalirVentasxTienda = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -359,6 +387,7 @@ public class Log_In extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        JD_MainScreen.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         JD_MainScreen.setTitle("Pantalla Principal de Administrador y Vendedor - Tiendas Circle K");
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
@@ -403,7 +432,7 @@ public class Log_In extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Vistas Adicionales");
+        jLabel12.setText("Vistas de Administrador");
 
         jLabel13.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -474,6 +503,26 @@ public class Log_In extends javax.swing.JFrame {
             }
         });
 
+        btn_ProdxPais.setBackground(new java.awt.Color(204, 102, 0));
+        btn_ProdxPais.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        btn_ProdxPais.setForeground(new java.awt.Color(255, 255, 255));
+        btn_ProdxPais.setText("ProductosxPais");
+        btn_ProdxPais.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_ProdxPaisMouseClicked(evt);
+            }
+        });
+
+        btn_CocavsPepsi.setBackground(new java.awt.Color(204, 102, 0));
+        btn_CocavsPepsi.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        btn_CocavsPepsi.setForeground(new java.awt.Color(255, 255, 255));
+        btn_CocavsPepsi.setText("CocaColavsPepsi");
+        btn_CocavsPepsi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_CocavsPepsiMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -490,15 +539,20 @@ public class Log_In extends javax.swing.JFrame {
                                 .addComponent(btn_ProductosMain, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(44, 44, 44)
                                 .addComponent(btn_TiendasMain, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(btn_TiendasEstrella, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
-                                .addComponent(btn_ProdEstrella, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
-                                .addComponent(btn_TiposProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(btn_MainVendedores, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_ComprasxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_TiendasEstrella, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_ComprasxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(44, 44, 44)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btn_ProdEstrella, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btn_ProdxPais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(44, 44, 44)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btn_TiposProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                    .addComponent(btn_CocavsPepsi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -531,7 +585,10 @@ public class Log_In extends javax.swing.JFrame {
                     .addComponent(btn_ProdEstrella, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_TiposProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addComponent(btn_ComprasxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_ComprasxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_ProdxPais, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_CocavsPepsi, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addComponent(btn_salirMain, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
@@ -800,6 +857,26 @@ public class Log_In extends javax.swing.JFrame {
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Tiendas de Circle K Activas");
 
+        btn_DeleteTienda.setBackground(new java.awt.Color(0, 102, 0));
+        btn_DeleteTienda.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        btn_DeleteTienda.setForeground(new java.awt.Color(255, 255, 255));
+        btn_DeleteTienda.setText("Delete Tienda");
+        btn_DeleteTienda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_DeleteTiendaMouseClicked(evt);
+            }
+        });
+
+        btn_MostrarVentas.setBackground(new java.awt.Color(0, 102, 0));
+        btn_MostrarVentas.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        btn_MostrarVentas.setForeground(new java.awt.Color(255, 255, 255));
+        btn_MostrarVentas.setText("Mostrar Ventas");
+        btn_MostrarVentas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_MostrarVentasMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -808,21 +885,23 @@ public class Log_In extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 695, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_salirAdminTiendas, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(btn_InsertTienda, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46)
-                        .addComponent(btn_UpdateTienda, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(356, 356, 356))))
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_salirAdminTiendas, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(btn_InsertTienda, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(46, 46, 46)
+                                .addComponent(btn_UpdateTienda, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(45, 45, 45)
+                                .addComponent(btn_DeleteTienda, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(41, 41, 41)
+                                .addComponent(btn_MostrarVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 39, Short.MAX_VALUE))))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -834,7 +913,9 @@ public class Log_In extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_InsertTienda, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_UpdateTienda, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_UpdateTienda, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_DeleteTienda, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_MostrarVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -938,18 +1019,24 @@ public class Log_In extends javax.swing.JFrame {
             }
         });
 
+        jLabel86.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        jLabel86.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel86.setText("En este ventana se muestran Los 20 productos más vendidos en cada tienda.");
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(379, 379, 379)
-                        .addComponent(btn_SalirProductosEstrella, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 798, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel86, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel9Layout.createSequentialGroup()
+                            .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(379, 379, 379)
+                            .addComponent(btn_SalirProductosEstrella, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 798, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
@@ -959,7 +1046,9 @@ public class Log_In extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
                     .addComponent(btn_SalirProductosEstrella, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                .addGap(3, 3, 3)
+                .addComponent(jLabel86)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(31, Short.MAX_VALUE))
         );
@@ -2181,13 +2270,13 @@ public class Log_In extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(102, 0, 0));
-        jButton1.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Salir");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_salirCrudVend.setBackground(new java.awt.Color(102, 0, 0));
+        btn_salirCrudVend.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
+        btn_salirCrudVend.setForeground(new java.awt.Color(255, 255, 255));
+        btn_salirCrudVend.setText("Salir");
+        btn_salirCrudVend.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                btn_salirCrudVendMouseClicked(evt);
             }
         });
 
@@ -2204,7 +2293,7 @@ public class Log_In extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel19Layout.createSequentialGroup()
                             .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btn_salirCrudVend, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel19Layout.createSequentialGroup()
                             .addComponent(btn_InsertVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(26, 26, 26)
@@ -2218,7 +2307,7 @@ public class Log_In extends javax.swing.JFrame {
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_salirCrudVend, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2379,6 +2468,215 @@ public class Log_In extends javax.swing.JFrame {
             .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        JD_ProductosxPais.setTitle("Productos mas Vendidos por Pais - Tiendas Circle K");
+
+        jPanel23.setBackground(new java.awt.Color(51, 51, 51));
+
+        jLabel87.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 24)); // NOI18N
+        jLabel87.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel87.setText("Productos Mas Vendidos por Pais");
+
+        jLabel88.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        jLabel88.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel88.setText("En esta ventana se muestran los 20 productos más vendidos en cada país.");
+
+        jScrollPane9.setViewportView(JTB_ProductosxPais);
+
+        btn_SalirProductosxPais.setBackground(new java.awt.Color(102, 0, 0));
+        btn_SalirProductosxPais.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
+        btn_SalirProductosxPais.setForeground(new java.awt.Color(255, 255, 255));
+        btn_SalirProductosxPais.setText("Salir");
+        btn_SalirProductosxPais.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_SalirProductosxPaisMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel23Layout.createSequentialGroup()
+                                .addComponent(jLabel87, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_SalirProductosxPais, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel88, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 779, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel87)
+                    .addComponent(btn_SalirProductosxPais, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel88)
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout JD_ProductosxPaisLayout = new javax.swing.GroupLayout(JD_ProductosxPais.getContentPane());
+        JD_ProductosxPais.getContentPane().setLayout(JD_ProductosxPaisLayout);
+        JD_ProductosxPaisLayout.setHorizontalGroup(
+            JD_ProductosxPaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        JD_ProductosxPaisLayout.setVerticalGroup(
+            JD_ProductosxPaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel24.setBackground(new java.awt.Color(51, 51, 51));
+
+        jLabel89.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 24)); // NOI18N
+        jLabel89.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel89.setText("Tiendas Coca vs. Pepsi");
+
+        JTB_CocaPepsi.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane10.setViewportView(JTB_CocaPepsi);
+
+        jLabel90.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        jLabel90.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel90.setText("En esta ventana se muestran las tiendas donde se vende mas CocaCola que Pepsi.");
+
+        btn_SalirCocaPepsi.setBackground(new java.awt.Color(102, 0, 0));
+        btn_SalirCocaPepsi.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
+        btn_SalirCocaPepsi.setForeground(new java.awt.Color(255, 255, 255));
+        btn_SalirCocaPepsi.setText("Salir");
+        btn_SalirCocaPepsi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_SalirCocaPepsiMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+        jPanel24.setLayout(jPanel24Layout);
+        jPanel24Layout.setHorizontalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel90))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_SalirCocaPepsi, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addContainerGap(48, Short.MAX_VALUE)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 821, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 43, Short.MAX_VALUE))
+        );
+        jPanel24Layout.setVerticalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel90))
+                    .addComponent(btn_SalirCocaPepsi, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout JD_CocavsPepsiLayout = new javax.swing.GroupLayout(JD_CocavsPepsi.getContentPane());
+        JD_CocavsPepsi.getContentPane().setLayout(JD_CocavsPepsiLayout);
+        JD_CocavsPepsiLayout.setHorizontalGroup(
+            JD_CocavsPepsiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        JD_CocavsPepsiLayout.setVerticalGroup(
+            JD_CocavsPepsiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel25.setBackground(new java.awt.Color(51, 51, 51));
+
+        jLabel91.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 24)); // NOI18N
+        jLabel91.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel91.setText("Ventas por Tienda");
+
+        jLabel92.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        jLabel92.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel92.setText("En esta ventana se muestran todas las ventas, organizadas por tienda");
+
+        jScrollPane11.setViewportView(JTB_VentasxTienda);
+
+        btn_SalirVentasxTienda.setBackground(new java.awt.Color(102, 0, 0));
+        btn_SalirVentasxTienda.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
+        btn_SalirVentasxTienda.setForeground(new java.awt.Color(255, 255, 255));
+        btn_SalirVentasxTienda.setText("Salir");
+        btn_SalirVentasxTienda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_SalirVentasxTiendaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel25Layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 856, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(41, Short.MAX_VALUE))
+                    .addGroup(jPanel25Layout.createSequentialGroup()
+                        .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel91, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_SalirVentasxTienda, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49))))
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_SalirVentasxTienda, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel25Layout.createSequentialGroup()
+                        .addComponent(jLabel91, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel92)))
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout JD_VentasxTiendaLayout = new javax.swing.GroupLayout(JD_VentasxTienda.getContentPane());
+        JD_VentasxTienda.getContentPane().setLayout(JD_VentasxTiendaLayout);
+        JD_VentasxTiendaLayout.setHorizontalGroup(
+            JD_VentasxTiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        JD_VentasxTiendaLayout.setVerticalGroup(
+            JD_VentasxTiendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Log In - Tiendas Circle K");
 
@@ -2524,28 +2822,86 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_TiposProductoActionPerformed
 
     private void btn_LogInConfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_LogInConfMouseClicked
+        if (!jtf_NombreUser.getText().equals("") && !jtf_PassUser.getText().equals("")){
+            try {
+                
+                String uname = jtf_NombreUser.getText();
+                String pass = jtf_PassUser.getText();
+                AdminDB dbcon = new AdminDB();
+                String dataToSelect = "select * from usuario where us_nombre = '"+uname+"' and contraseña = '"+pass+"'";
+                rst = dbcon.ReturnResultSet(dataToSelect);
+                
+                if (rst.next()){
+                    CurrentUserRole = rst.getString("rol");
+                    
+                    if (CurrentUserRole.equals("Admin")){
+                        this.setVisible(false);
+                        JOptionPane.showMessageDialog(null, "Log In Exitoso.\nBienvenido, "+jtf_NombreUser.getText());
+                        
+                        
+                        CurrentuName = jtf_NombreUser.getText();
+                        CurrentPass = jtf_PassUser.getText();
+                        
+                        //Setear al usuario como activo
+                        dbcon.Ingreso("update usuario\n" +
+                                    "set activo = 'true'\n" +
+                                    "where us_nombre = '"+CurrentuName+"' and contraseña = '"+CurrentPass+"'");
+                        
+                        
+                        //Se abre la ventana principal
+                        JD_MainScreen.pack();
+                        JD_MainScreen.setModal(false);
+                        JD_MainScreen.setLocationRelativeTo(this);
+                        JD_MainScreen.setVisible(true);
+                        
+                        
+                        
+                        
+                    }
+                    else if (CurrentUserRole.equals("Cliente")){
+                        this.setVisible(false);
+                        JOptionPane.showMessageDialog(null, "Log In Exitoso.\nBienvenido, "+jtf_NombreUser.getText());
+                        AbrirVentana(JD_MainClientes);
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Usuario no encontrado.\nIntente de nuevo.");
+                }
+                
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Llene ambos text fields.");
+        }
+        
+        
+        
+        /*
         if ( jtf_NombreUser.getText().equals("Admin") && jtf_PassUser.getText().equals("1234")){
-            this.setVisible(false);
-            JOptionPane.showMessageDialog(null, "Log In Exitoso.\nBienvenido, "+jtf_NombreUser.getText());
-            JD_MainScreen.pack();
-            JD_MainScreen.setModal(false);
-            JD_MainScreen.setLocationRelativeTo(this);
-            JD_MainScreen.setVisible(true);
+            
         }
         else if ( jtf_NombreUser.getText().equals("Cliente") && jtf_PassUser.getText().equals("5678")){
-            this.setVisible(false);
-            JOptionPane.showMessageDialog(null, "Log In Exitoso.\nBienvenido, "+jtf_NombreUser.getText());
-            AbrirVentana(JD_MainClientes);
+            
         }
         else{
             JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrecto.\nIntente de nuevo.");
         }
+        */
         
     }//GEN-LAST:event_btn_LogInConfMouseClicked
 
     private void btn_salirMainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirMainMouseClicked
         int opcion = JOptionPane.showConfirmDialog(null, "Desea salir del usuario actual?", "Salir", JOptionPane.YES_NO_OPTION);
         if (opcion == 0){
+            
+            AdminDB dbcon = new AdminDB();
+            //Setear al usuario como Inactivo al salir del programa
+            dbcon.Ingreso("update usuario\n" +
+            "set activo = 'false'\n" +
+            "where us_nombre = '"+CurrentuName+"' and contraseña = '"+CurrentPass+"'");
+            
             JD_MainScreen.setVisible(false);
             this.setVisible(true);
         }
@@ -2716,6 +3072,34 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_SalirTiendasEstrellaMouseClicked
 
     private void btn_ProdEstrellaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ProdEstrellaMouseClicked
+        try {
+            AdminDB dbcon = new AdminDB();
+            String dataToSelect = "select * from maspopulatesbytienda";
+            rst = dbcon.ReturnResultSet(dataToSelect);
+
+
+            DefaultTableModel modeloPET = new DefaultTableModel();
+            modeloPET.addColumn("UPC Producto");
+            modeloPET.addColumn("Nombre Producto");
+            modeloPET.addColumn("Nombre Tienda");
+            modeloPET.addColumn("Cantidad Vendida");
+
+            while (rst.next()) {
+                String UPCProd = rst.getString("upc");
+                String Nombre_Prod = rst.getString("nombre");
+                String Nombre_Tienda = rst.getString("tienda_nombre");
+                String Cant_Vendida = rst.getString("cantidad_vendida");
+                
+                Object[] obj = {UPCProd, Nombre_Prod, Nombre_Tienda, Cant_Vendida};
+                modeloPET.addRow(obj);
+            }
+            JTB_ProductosEstrella.setModel(modeloPET);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        
         JD_MainScreen.dispose();
         AbrirVentana(JD_ProductosEstrella);
     }//GEN-LAST:event_btn_ProdEstrellaMouseClicked
@@ -2941,13 +3325,48 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_UpdateVendedorMouseClicked
 
     private void btn_DeleteVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DeleteVendedorMouseClicked
+        if (JTB_VendedoresAct.getSelectedRow()>=0){
+            int decision = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar este vendedor?", "Eliminar Vendedor", JOptionPane.YES_NO_OPTION);
+            
+            if (decision == 0){
+                
+                try {
+                    AdminDB bd = new AdminDB();
+                    String Oldnombre = JTB_VendedoresAct.getValueAt(JTB_VendedoresAct.getSelectedRow(), 1).toString();
+                    vendToUpdate = JTB_VendedoresAct.getValueAt(JTB_VendedoresAct.getSelectedRow(), 0).toString();
+
+                    //Llamado de Procedimento para actualizar vendedor
+                    bd.Ingreso("CALL eliminar_vendedor('"+vendToUpdate+"');");
+                    vendToUpdate = "";
+                    
+                    
+                    //Remueve el vendedor de la tabla activa
+                    DefaultTableModel model = (DefaultTableModel) JTB_VendedoresAct.getModel();
+                    model.removeRow(JTB_VendedoresAct.getSelectedRow());
+                    JTB_VendedoresAct.setModel(model);
+                    
+
+                    JOptionPane.showMessageDialog(null, "El vendedor ha sido eliminado exitosamente.");
+                    System.out.println("nombre seleccionado = "+Oldnombre);
+
+                    
+                } catch (Exception exp) {
+                    exp.printStackTrace();
+                }
+                
+            }
+           
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Tiene que seleccionar un vendedor para eliminar.");
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_DeleteVendedorMouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void btn_salirCrudVendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirCrudVendMouseClicked
         JD_CrudVendedores.dispose();
         AbrirVentana(JD_MainScreen);
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_btn_salirCrudVendMouseClicked
 
     private void btn_CrearTiendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CrearTiendaMouseClicked
         if (!"".equals(TF_IDTienda.getText()) && !"".equals(TF_NombreTienda.getText())){
@@ -3075,7 +3494,7 @@ public class Log_In extends javax.swing.JFrame {
     private void btn_SalirComprasxClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_SalirComprasxClienteMouseClicked
         
         JD_ComprasxCliente.dispose();
-        AbrirVentana(JD_MainClientes);
+        AbrirVentana(JD_MainScreen);
     }//GEN-LAST:event_btn_SalirComprasxClienteMouseClicked
 
     private void btn_ConfUpdateVendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ConfUpdateVendMouseClicked
@@ -3162,6 +3581,160 @@ public class Log_In extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_ConfUpdateProdMouseClicked
 
+    private void btn_ProdxPaisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ProdxPaisMouseClicked
+
+        try {
+            AdminDB dbcon = new AdminDB();
+            String dataToSelect = "select * from masvendidosporubic";
+            rst = dbcon.ReturnResultSet(dataToSelect);
+
+
+            DefaultTableModel modeloPXP = new DefaultTableModel();
+            modeloPXP.addColumn("UPC Producto");
+            modeloPXP.addColumn("Nombre Producto");
+            modeloPXP.addColumn("Ubicacion");
+
+            while (rst.next()) {
+                String UPCProd = rst.getString("upc");
+                String Nombre_Prod = rst.getString("nombre");
+                String Ubicacion = rst.getString("ubication");
+                
+                
+                Object[] obj = {UPCProd, Nombre_Prod, Ubicacion};
+                modeloPXP.addRow(obj);
+            }
+            JTB_ProductosxPais.setModel(modeloPXP);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        
+        JD_MainScreen.dispose();
+        AbrirVentana(JD_ProductosxPais);
+    }//GEN-LAST:event_btn_ProdxPaisMouseClicked
+
+    private void btn_SalirProductosxPaisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_SalirProductosxPaisMouseClicked
+        JD_ProductosxPais.dispose();
+        AbrirVentana(JD_MainScreen);
+    }//GEN-LAST:event_btn_SalirProductosxPaisMouseClicked
+
+    private void btn_CocavsPepsiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CocavsPepsiMouseClicked
+        
+        try {
+            AdminDB dbcon = new AdminDB();
+            String dataToSelect = "select * from ventas_coca_vs_pepsi";
+            rst = dbcon.ReturnResultSet(dataToSelect);
+
+
+            DefaultTableModel modeloCVP = new DefaultTableModel();
+            modeloCVP.addColumn("Nombre Tienda");
+            modeloCVP.addColumn("Ventas Coca");
+            modeloCVP.addColumn("Ventas Pepsi");
+
+            while (rst.next()) {
+                String NomTienda = rst.getString("tienda_nombre");
+                String VentasCoca = rst.getString("ventas_coca");
+                String VentasPepsi = rst.getString("ventas_pepsi");
+                
+                
+                Object[] obj = {NomTienda, VentasCoca, VentasPepsi};
+                modeloCVP.addRow(obj);
+            }
+            JTB_CocaPepsi.setModel(modeloCVP);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        
+        JD_MainScreen.dispose();
+        AbrirVentana(JD_CocavsPepsi);
+    }//GEN-LAST:event_btn_CocavsPepsiMouseClicked
+
+    private void btn_SalirCocaPepsiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_SalirCocaPepsiMouseClicked
+        JD_CocavsPepsi.dispose();
+        AbrirVentana(JD_MainScreen);
+    }//GEN-LAST:event_btn_SalirCocaPepsiMouseClicked
+
+    private void btn_DeleteTiendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DeleteTiendaMouseClicked
+        //Este metodo solo es copia del de delete vendedor, aun no esta terminado
+        if (JTB_TablaTiendas.getSelectedRow()>=0){
+            int decision = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar esta tienda\nEsto causara que su inventario, ubicaciones y?", "Eliminar Vendedor", JOptionPane.YES_NO_OPTION);
+            
+            if (decision == 0){
+                
+                try {
+                    AdminDB bd = new AdminDB();
+                    String Oldnombre = JTB_TablaTiendas.getValueAt(JTB_TablaTiendas.getSelectedRow(), 1).toString();
+                    tiendaToUpdate = JTB_TablaTiendas.getValueAt(JTB_TablaTiendas.getSelectedRow(), 0).toString();
+
+                    //Llamado de Procedimento para actualizar vendedor
+                    bd.Ingreso("CALL eliminar_tienda('"+tiendaToUpdate+"');");
+                    tiendaToUpdate = "";
+                    
+                    
+                    //Remueve el vendedor de la tabla activa
+                    DefaultTableModel model = (DefaultTableModel) JTB_TablaTiendas.getModel();
+                    model.removeRow(JTB_TablaTiendas.getSelectedRow());
+                    JTB_TablaTiendas.setModel(model);
+                    
+
+                    JOptionPane.showMessageDialog(null, "La tienda ha sido eliminado exitosamente.");
+                    System.out.println("nombre seleccionado = "+Oldnombre);
+
+                    
+                } catch (Exception exp) {
+                    exp.printStackTrace();
+                }
+                
+            }
+           
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Tiene que seleccionar una tienda para eliminar.");
+        }
+        
+    }//GEN-LAST:event_btn_DeleteTiendaMouseClicked
+
+    private void btn_MostrarVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_MostrarVentasMouseClicked
+        try {
+            AdminDB dbcon = new AdminDB();
+            String dataToSelect = "select * from historial_ventas_tienda";
+            rst = dbcon.ReturnResultSet(dataToSelect);
+
+
+            DefaultTableModel modeloHT = new DefaultTableModel();
+            modeloHT.addColumn("ID Tienda");
+            modeloHT.addColumn("Numero Factura");
+            modeloHT.addColumn("UPC Producto");
+            modeloHT.addColumn("Fecha Factura");
+
+            while (rst.next()) {
+                String IDT = rst.getString("tienda_id");
+                String NF = rst.getString("numero_factura");
+                String UPC = rst.getString("producto_upc");
+                String FF = rst.getString("fecha_factura");
+                
+                
+                Object[] obj = {IDT, NF, UPC, FF};
+                modeloHT.addRow(obj);
+            }
+            JTB_VentasxTienda.setModel(modeloHT);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+ 
+        JD_CrudTiendas.dispose();
+        AbrirVentana(JD_VentasxTienda);
+    }//GEN-LAST:event_btn_MostrarVentasMouseClicked
+
+    private void btn_SalirVentasxTiendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_SalirVentasxTiendaMouseClicked
+        JD_VentasxTienda.dispose();
+        AbrirVentana(JD_MainScreen);
+    }//GEN-LAST:event_btn_SalirVentasxTiendaMouseClicked
+
     private String generateID() {
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         String id = "";
@@ -3222,6 +3795,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CB_HorarioTienda1;
     private javax.swing.JComboBox<String> CB_TamProducto;
     private javax.swing.JComboBox<String> CB_TamProductoUpdate;
+    private javax.swing.JDialog JD_CocavsPepsi;
     private javax.swing.JDialog JD_ComprarProdCliente;
     private javax.swing.JDialog JD_ComprasxCliente;
     private javax.swing.JDialog JD_CrudClientes;
@@ -3236,6 +3810,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JDialog JD_MainClientes;
     private javax.swing.JDialog JD_MainScreen;
     private javax.swing.JDialog JD_ProductosEstrella;
+    private javax.swing.JDialog JD_ProductosxPais;
     private javax.swing.JDialog JD_SignIn;
     private javax.swing.JDialog JD_TiendasEstrella;
     private javax.swing.JDialog JD_TiposProducto;
@@ -3243,14 +3818,18 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JDialog JD_UpdateProducto;
     private javax.swing.JDialog JD_UpdateTienda;
     private javax.swing.JDialog JD_UpdateVendedor;
+    private javax.swing.JDialog JD_VentasxTienda;
+    private javax.swing.JTable JTB_CocaPepsi;
     private javax.swing.JTable JTB_ComprasCliente;
     private javax.swing.JTable JTB_ProductosEstrella;
+    private javax.swing.JTable JTB_ProductosxPais;
     private javax.swing.JTable JTB_TablaClientes;
     private javax.swing.JTable JTB_TablaProductos;
     private javax.swing.JTable JTB_TablaTiendas;
     private javax.swing.JTable JTB_TablaTiendasEstr;
     private javax.swing.JTable JTB_TiposProd;
     private javax.swing.JTable JTB_VendedoresAct;
+    private javax.swing.JTable JTB_VentasxTienda;
     private javax.swing.JTextField TF_CantidadProductoUpdate;
     private javax.swing.JTextField TF_CorreoCliente;
     private javax.swing.JTextField TF_CorreoClienteUpd;
@@ -3274,6 +3853,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JTextField TF_passCliente;
     private javax.swing.JTextField TF_passVendedor;
     private javax.swing.JTextField TF_usernameCliente;
+    private javax.swing.JButton btn_CocavsPepsi;
     private javax.swing.JButton btn_ComprarProduct;
     private javax.swing.JButton btn_ComprasxCliente;
     private javax.swing.JButton btn_ConfInsertClient;
@@ -3286,6 +3866,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JButton btn_CreateUser;
     private javax.swing.JButton btn_DeleteCliente;
     private javax.swing.JButton btn_DeleteProducto;
+    private javax.swing.JButton btn_DeleteTienda;
     private javax.swing.JButton btn_DeleteVendedor;
     private javax.swing.JButton btn_FactCliente;
     private javax.swing.JButton btn_InsertCliente;
@@ -3295,13 +3876,18 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JButton btn_LogInConf;
     private javax.swing.JButton btn_MainClientes;
     private javax.swing.JButton btn_MainVendedores;
+    private javax.swing.JButton btn_MostrarVentas;
     private javax.swing.JButton btn_ProdEstrella;
     private javax.swing.JButton btn_ProductosMain;
+    private javax.swing.JButton btn_ProdxPais;
     private javax.swing.JButton btn_RegresarSignIn;
+    private javax.swing.JButton btn_SalirCocaPepsi;
     private javax.swing.JButton btn_SalirComprasxCliente;
     private javax.swing.JButton btn_SalirMenuClientes;
     private javax.swing.JButton btn_SalirProductosEstrella;
+    private javax.swing.JButton btn_SalirProductosxPais;
     private javax.swing.JButton btn_SalirTiendasEstrella;
+    private javax.swing.JButton btn_SalirVentasxTienda;
     private javax.swing.JButton btn_SignIn;
     private javax.swing.JButton btn_TiendasEstrella;
     private javax.swing.JButton btn_TiendasMain;
@@ -3315,6 +3901,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JButton btn_salirAdminClientes;
     private javax.swing.JButton btn_salirAdminProds;
     private javax.swing.JButton btn_salirAdminTiendas;
+    private javax.swing.JButton btn_salirCrudVend;
     private javax.swing.JButton btn_salirInsertCliente;
     private javax.swing.JButton btn_salirInsertProducto;
     private javax.swing.JButton btn_salirInsertTienda;
@@ -3325,7 +3912,6 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JButton btn_salirUpdateProducto;
     private javax.swing.JButton btn_salirUpdateTienda;
     private javax.swing.JButton btn_salirUpdateVend;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3408,7 +3994,14 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -3424,6 +4017,9 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -3432,6 +4028,8 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -3439,6 +4037,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jtf_NombreUser;
