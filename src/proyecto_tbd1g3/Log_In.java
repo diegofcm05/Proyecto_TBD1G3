@@ -2868,6 +2868,8 @@ public class Log_In extends javax.swing.JFrame {
             .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        JD_MainVendedor.setTitle("Menu Principal de Vendedor - Tiendas Circle K");
+
         jPanel26.setBackground(new java.awt.Color(51, 51, 51));
 
         jLabel99.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 24)); // NOI18N
@@ -3450,8 +3452,17 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_SalirMenuClientesMouseClicked
 
     private void btn_salirInsertProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirInsertProductoMouseClicked
-        JD_InsertProducto.dispose();
-        AbrirVentana(JD_CrudProductos);
+        
+        if (CurrentUserRole.equals("Vendedor")){
+            JD_InsertProducto.dispose();
+            AbrirVentana(JD_MainVendedor);
+        }
+        else{
+            JD_InsertProducto.dispose();
+            AbrirVentana(JD_CrudProductos);
+        }
+        
+        
     }//GEN-LAST:event_btn_salirInsertProductoMouseClicked
 
     private void btn_InsertProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InsertProductoMouseClicked
@@ -4249,7 +4260,8 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_FactClienteMouseClicked
 
     private void btn_InsertProductoVendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InsertProductoVendMouseClicked
-        // TODO add your handling code here:
+        JD_MainVendedor.dispose();
+        AbrirVentana(JD_InsertProducto);
     }//GEN-LAST:event_btn_InsertProductoVendMouseClicked
 
     private void btn_InventarioVendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InventarioVendMouseClicked

@@ -4465,6 +4465,9 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JDialog" name="JD_MainVendedor">
+      <Properties>
+        <Property name="title" type="java.lang.String" value="Menu Principal de Vendedor - Tiendas Circle K"/>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
