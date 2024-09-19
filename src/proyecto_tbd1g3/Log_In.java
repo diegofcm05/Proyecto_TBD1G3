@@ -18,6 +18,7 @@ import javax.swing.table.DefaultTableModel;
  * @author dfcm9
  */
 public class Log_In extends javax.swing.JFrame {
+    //Variables Globales
     String CurrentUserRole = "";
     String CurrentuName = "";
     String CurrentPass = "";
@@ -32,13 +33,14 @@ public class Log_In extends javax.swing.JFrame {
     String productoUPCToUpdate = "";
     boolean compraFinalizada = false;
     String currentFactNum = "";
-
+    
     //AdminDB bd = new AdminDB();
     /**
      * Creates new form Log_In
      */
     public Log_In() {
         //bd.Conectarme();
+        
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -327,10 +329,7 @@ public class Log_In extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jtf_PassUser = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         btn_LogInConf = new javax.swing.JButton();
-        btn_SignIn = new javax.swing.JButton();
-        btn_probarAWS = new javax.swing.JButton();
 
         JD_SignIn.setTitle("Sign In - Circle K");
 
@@ -1266,6 +1265,8 @@ public class Log_In extends javax.swing.JFrame {
         jLabel95.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
         jLabel95.setForeground(new java.awt.Color(255, 255, 255));
         jLabel95.setText("Cantidad");
+
+        JS_Cantidad.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         jLabel96.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
         jLabel96.setForeground(new java.awt.Color(255, 255, 255));
@@ -3007,10 +3008,6 @@ public class Log_In extends javax.swing.JFrame {
 
         jtf_PassUser.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 14)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("¿No tiene cuenta?");
-
         btn_LogInConf.setBackground(new java.awt.Color(204, 51, 0));
         btn_LogInConf.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
         btn_LogInConf.setForeground(new java.awt.Color(255, 255, 255));
@@ -3022,27 +3019,6 @@ public class Log_In extends javax.swing.JFrame {
             }
         });
 
-        btn_SignIn.setBackground(new java.awt.Color(153, 0, 51));
-        btn_SignIn.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
-        btn_SignIn.setForeground(new java.awt.Color(255, 255, 255));
-        btn_SignIn.setText("Sign In");
-        btn_SignIn.setFocusable(false);
-        btn_SignIn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_SignInMouseClicked(evt);
-            }
-        });
-
-        btn_probarAWS.setBackground(new java.awt.Color(51, 153, 0));
-        btn_probarAWS.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
-        btn_probarAWS.setForeground(new java.awt.Color(255, 255, 255));
-        btn_probarAWS.setText("ProbarAWS");
-        btn_probarAWS.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_probarAWSMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -3051,27 +3027,24 @@ public class Log_In extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtf_PassUser, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
-                            .addComponent(jtf_NombreUser)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_LogInConf, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn_SignIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_probarAWS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(0, 22, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jtf_PassUser, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                                    .addComponent(jtf_NombreUser)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 22, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(btn_LogInConf, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3088,15 +3061,9 @@ public class Log_In extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtf_PassUser, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_probarAWS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_LogInConf, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_SignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32))
+                .addGap(49, 49, 49)
+                .addComponent(btn_LogInConf, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -3121,7 +3088,7 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_TiposProductoActionPerformed
 
     private void btn_LogInConfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_LogInConfMouseClicked
-        if (!jtf_NombreUser.getText().equals("") && !jtf_PassUser.getText().equals("")){
+        if (!jtf_NombreUser.getText().equals("") && !jtf_PassUser.getText().equals("")){//
             try {
                 
                 String uname = jtf_NombreUser.getText();
@@ -3182,7 +3149,8 @@ public class Log_In extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Llene ambos text fields.");
         }
         
-        
+        jtf_NombreUser.setText("");
+        jtf_PassUser.setText("");
         
         /*
         if ( jtf_NombreUser.getText().equals("Admin") && jtf_PassUser.getText().equals("1234")){
@@ -3217,16 +3185,6 @@ public class Log_In extends javax.swing.JFrame {
         JD_SignIn.dispose();
         this.setVisible(true);
     }//GEN-LAST:event_btn_RegresarSignInMouseClicked
-
-    private void btn_SignInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_SignInMouseClicked
-        this.setVisible(false);
-        AbrirVentana(JD_SignIn);
-    }//GEN-LAST:event_btn_SignInMouseClicked
-
-    private void btn_probarAWSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_probarAWSMouseClicked
-        QueryTest qt = new QueryTest();
-        qt.TestaQuery();
-    }//GEN-LAST:event_btn_probarAWSMouseClicked
 
     private void btn_MainClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_MainClientesMouseClicked
         //Populado de tabla principal de Clientes
@@ -3265,7 +3223,10 @@ public class Log_In extends javax.swing.JFrame {
 
     private void btn_salirAdminProdsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirAdminProdsMouseClicked
         JD_CrudProductos.dispose();
-        AbrirVentana(JD_MainScreen);
+        if(CurrentUserRole.equals("Admin"))
+            AbrirVentana(JD_MainScreen);
+        else
+            AbrirVentana(JD_MainVendedor);
     }//GEN-LAST:event_btn_salirAdminProdsMouseClicked
 
     private void btn_salirAdminTiendasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirAdminTiendasMouseClicked
@@ -3719,6 +3680,8 @@ public class Log_In extends javax.swing.JFrame {
             
             //Llamado de Procedimiento para insertar tienda
             bd.Ingreso("CALL insertar_tienda('"+idtienda+"', '"+nomtienda+"', '"+horario+"');");
+            TF_IDTienda.setText("");
+            TF_NombreTienda.setText("");
         }
         else{
             JOptionPane.showMessageDialog(null, "Para insertar, llene todos los campos necesarios.");
@@ -3741,6 +3704,10 @@ public class Log_In extends javax.swing.JFrame {
             
             //Llamado de Procedimento para insertar cliente
             bd.Ingreso("CALL insertar_cliente('"+id+"', '"+realname+"', '"+correo+"');");
+            TF_usernameCliente.setText("");
+            TF_passCliente.setText("");
+            TF_NombreCliente.setText("");
+            TF_CorreoCliente.setText("");
         }
         else{
             JOptionPane.showMessageDialog(null, "Para insertar, llene todos los campos necesarios.");
@@ -3764,6 +3731,9 @@ public class Log_In extends javax.swing.JFrame {
             
             //Llamado de Procedimento para insertar vendedor
             bd.Ingreso("CALL insertar_vendedor('"+id+"', '"+realname+"');");
+            TF_UsernameVendedor.setText("");
+            TF_passVendedor.setText("");
+            TF_NombreVendedor.setText("");
         }
         else{
             JOptionPane.showMessageDialog(null, "Para insertar, llene todos los campos necesarios.");
@@ -3771,8 +3741,8 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ConfInsertVendedorMouseClicked
 
     private void btn_CrearProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CrearProductoMouseClicked
-        if (!TF_UpcProducto.getText().equals("") && !TF_nomProducto.getText().equals("") && !TF_EmbalajeProducto.getText().equals("") && !TF_MarcaProducto.getText().equals("") && !TF_TipoProducto.getText().equals("")){
-            
+        if (!TF_UpcProducto.getText().equals("") && !TF_nomProducto.getText().equals("") && !TF_EmbalajeProducto.getText().equals("") && !TF_MarcaProducto.getText().equals("") && !TF_TipoProducto.getText().equals("")&&!TF_PrecioProd.getText().equals("")&&EsUnDouble(TF_PrecioProd.getText())){
+            JOptionPane.showMessageDialog(null, "Si.");
             AdminDB bd = new AdminDB();
             String nameprod = TF_nomProducto.getText();
             String upc = TF_UpcProducto.getText();
@@ -3799,9 +3769,23 @@ public class Log_In extends javax.swing.JFrame {
             if (CurrentUserRole.equals("Vendedor")){
                 bd.Ingreso("insert into vende (v_id, upc) values ('"+CurrentID+"', '"+upc+"')");
             }
+            TF_UpcProducto.setText("");
+            TF_nomProducto.setText("");
+            TF_EmbalajeProducto.setText("");
+            TF_MarcaProducto.setText("");
+            TF_TipoProducto.setText("");
+            TF_PrecioProd.setText("");
+            TF_ReordenProd.setText("");
+            JS_Cantidad.setValue(0);
+            
         }
         else{
-            JOptionPane.showMessageDialog(null, "Para insertar, llene todos los campos necesarios.");
+            if(EsUnDouble(TF_PrecioProd.getText())){
+                JOptionPane.showMessageDialog(null, "Para insertar, llene todos los campos necesarios.");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Ingrese un precio valido.");
+            }
         }
     }//GEN-LAST:event_btn_CrearProductoMouseClicked
 
@@ -3847,7 +3831,10 @@ public class Log_In extends javax.swing.JFrame {
     private void btn_SalirComprasxClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_SalirComprasxClienteMouseClicked
         
         JD_ComprasxCliente.dispose();
-        AbrirVentana(JD_MainScreen);
+        if(CurrentUserRole.equals("Admin"))
+            AbrirVentana(JD_MainScreen);
+        else
+            AbrirVentana(JD_MainVendedor);
     }//GEN-LAST:event_btn_SalirComprasxClienteMouseClicked
 
     private void btn_ConfUpdateVendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ConfUpdateVendMouseClicked
@@ -3859,6 +3846,8 @@ public class Log_In extends javax.swing.JFrame {
             //Llamado de Procedimento para actualizar vendedor
             bd.Ingreso("CALL actualizar_vendedor('"+vendToUpdate+"', '"+realname+"');");
             vendToUpdate = "";
+            
+            TF_NombreVendedorUpdate.setText("");
             
             JD_UpdateVendedor.dispose();
             AbrirVentana(JD_MainScreen);
@@ -3880,6 +3869,8 @@ public class Log_In extends javax.swing.JFrame {
             bd.Ingreso("CALL actualizar_tienda('"+tiendaToUpdate+"', '"+realname+"', '"+type+"');");
             tiendaToUpdate = "";
             
+            TF_NombreTienda1.setText("");
+            
             JD_UpdateTienda.dispose();
             AbrirVentana(JD_MainScreen);
             
@@ -3899,7 +3890,8 @@ public class Log_In extends javax.swing.JFrame {
             //Llamado de Procedimento para actualizar vendedor
             bd.Ingreso("CALL actualizar_cliente('"+clienteToUpdate+"', '"+realname+"', '"+newCorreo+"');");
             clienteToUpdate = "";
-            
+            TF_NombreClienteUpd.setText("");
+            TF_CorreoClienteUpd.setText("");
             JD_UpdateCliente.dispose();
             AbrirVentana(JD_MainScreen);
             
@@ -3910,7 +3902,8 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ConfUpdateClientMouseClicked
 
     private void btn_ConfUpdateProdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ConfUpdateProdMouseClicked
-        if (!TF_nomProductoUpdate.getText().equals("") || !TF_MarcaProductoUpdate.getText().equals("") || !TF_PrecioProductoUpdate.getText().equals("") || !TF_CantidadProductoUpdate.getText().equals("") || !TF_ReOrdenProductoUpdate.getText().equals("")){
+        if (!TF_nomProductoUpdate.getText().equals("") && !TF_MarcaProductoUpdate.getText().equals("") && !TF_PrecioProductoUpdate.getText().equals("") && !TF_CantidadProductoUpdate.getText().equals("") && !TF_ReOrdenProductoUpdate.getText().equals("")&& EsUnDouble(TF_PrecioProductoUpdate.getText())){
+          
             AdminDB bd = new AdminDB();
             
             String realname = TF_nomProductoUpdate.getText();
@@ -3924,13 +3917,22 @@ public class Log_In extends javax.swing.JFrame {
             bd.Ingreso("CALL actualizar_inventario_y_producto('"+productoToUpdate+"', '"+productoUPCToUpdate+"', "+newPrecio+", "+newCantidad+", '"+newReorden+"', '"+realname+"', '"+newMarca+"', '"+newTam+"');");
             clienteToUpdate = "";
             productoUPCToUpdate="";
-            
+            TF_nomProductoUpdate.setText("");
+            TF_PrecioProductoUpdate.setText("");
+            TF_ReOrdenProductoUpdate.setText("");
+            TF_MarcaProductoUpdate.setText("");
+            TF_CantidadProductoUpdate.setText("");
             JD_UpdateProducto.dispose();
             AbrirVentana(JD_MainScreen);
             
         }
         else{
-            JOptionPane.showMessageDialog(null, "Para actualizar, llene todos los campos necesarios.");
+            if(EsUnDouble(TF_PrecioProductoUpdate.getText())){
+                JOptionPane.showMessageDialog(null, "Para actualizar, llene todos los campos necesarios.");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Ingrese un precio valido.");
+            }
         }
     }//GEN-LAST:event_btn_ConfUpdateProdMouseClicked
 
@@ -4266,10 +4268,85 @@ public class Log_In extends javax.swing.JFrame {
 
     private void btn_InventarioVendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InventarioVendMouseClicked
         // TODO add your handling code here:
+        try {
+            AdminDB dbcon = new AdminDB();
+            String dataToSelect = "select * from inventory";
+            rst = dbcon.ReturnResultSet(dataToSelect);
+
+
+            DefaultTableModel modeloPR = new DefaultTableModel();
+            modeloPR.addColumn("ID Tienda");
+            modeloPR.addColumn("UPC");
+            modeloPR.addColumn("Nombre");
+            modeloPR.addColumn("Tamaño");
+            modeloPR.addColumn("Marca");
+            modeloPR.addColumn("Precio");
+            modeloPR.addColumn("Cantidad");
+            modeloPR.addColumn("Reorden");
+            
+
+            while (rst.next()) {
+                String IDTienda = rst.getString("t_id");
+                String UPC = rst.getString("upc");
+                String Nombre_Producto = rst.getString("nombre");
+                String Tam = rst.getString("tamaño");
+                String Marca = rst.getString("marca");
+                String Precio = rst.getString("precio");
+                String Cantidad = rst.getString("cantidad");
+                String Reorden = rst.getString("reorden");
+                
+                Object[] obj = {IDTienda, UPC, Nombre_Producto, Tam, Marca, Precio, Cantidad, Reorden};
+                modeloPR.addRow(obj);
+            }
+            JTB_TablaProductos.setModel(modeloPR);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        
+        JD_MainVendedor.dispose();
+        AbrirVentana(JD_CrudProductos);
     }//GEN-LAST:event_btn_InventarioVendMouseClicked
 
     private void btn_ComprasClienteVendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ComprasClienteVendMouseClicked
         // TODO add your handling code here:
+        try {
+            AdminDB dbcon = new AdminDB();
+            String dataToSelect = "select * from comprasxcliente";
+            rst = dbcon.ReturnResultSet(dataToSelect);
+
+
+            DefaultTableModel modeloCxC = new DefaultTableModel();
+            modeloCxC.addColumn("ID Cliente");
+            modeloCxC.addColumn("Nombre Cliente");
+            modeloCxC.addColumn("Numero Factura");
+            modeloCxC.addColumn("UPC Producto");
+            modeloCxC.addColumn("Nombre Producto");
+            modeloCxC.addColumn("Total Factura");
+            modeloCxC.addColumn("Fecha Factura");
+
+            while (rst.next()) {
+                String IDCliente = rst.getString("c_id");
+                String NomCliente = rst.getString("cliente_nombre");
+                String NumFact = rst.getString("factura_numero");
+                String UPC = rst.getString("producto_upc");
+                String NomProd = rst.getString("producto_nombre");
+                String TotalFact = rst.getString("factura_total");
+                String FechaFact = rst.getString("factura_fecha");
+                
+                Object[] obj = {IDCliente, NomCliente, NumFact, UPC, NomProd, TotalFact, FechaFact};
+                modeloCxC.addRow(obj);
+            }
+            JTB_ComprasCliente.setModel(modeloCxC);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        
+        JD_MainVendedor.dispose();
+        AbrirVentana(JD_ComprasxCliente);
     }//GEN-LAST:event_btn_ComprasClienteVendMouseClicked
 
     private void btn_ComprasClienteVendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ComprasClienteVendActionPerformed
@@ -4338,6 +4415,24 @@ public class Log_In extends javax.swing.JFrame {
         ventana.setModal(false);
         ventana.setLocationRelativeTo(this);
         ventana.setVisible(true);
+    }
+    
+    //Metodo utilizado para confirmar que la cadena ingresada es un double
+    public boolean EsUnDouble(String x) {
+        int pointcounter = 0;
+        for (int i = 0; i < x.length(); i++) {
+            if ((x.charAt(i) < 48 || x.charAt(i) > 57) && x.charAt(i) != 46) {
+                return false;
+            }
+            if (x.charAt(i) == 46){
+                pointcounter++;
+            }
+        }
+        
+        if (pointcounter > 1){
+            return false;
+        }
+        return true; 
     }
     
     
@@ -4487,7 +4582,6 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JButton btn_SalirProductosxPais;
     private javax.swing.JButton btn_SalirTiendasEstrella;
     private javax.swing.JButton btn_SalirVentasxTienda;
-    private javax.swing.JButton btn_SignIn;
     private javax.swing.JButton btn_TiendasEstrella;
     private javax.swing.JButton btn_TiendasMain;
     private javax.swing.JButton btn_TiposProducto;
@@ -4496,7 +4590,6 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JButton btn_UpdateTienda;
     private javax.swing.JButton btn_UpdateTiendaConf;
     private javax.swing.JButton btn_UpdateVendedor;
-    private javax.swing.JButton btn_probarAWS;
     private javax.swing.JButton btn_salirAdminClientes;
     private javax.swing.JButton btn_salirAdminProds;
     private javax.swing.JButton btn_salirAdminTiendas;
@@ -4512,7 +4605,6 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JButton btn_salirUpdateProducto;
     private javax.swing.JButton btn_salirUpdateTienda;
     private javax.swing.JButton btn_salirUpdateVend;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel11;
