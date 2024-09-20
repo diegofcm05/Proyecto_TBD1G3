@@ -18,6 +18,7 @@ import javax.swing.table.DefaultTableModel;
  * @author dfcm9
  */
 public class Log_In extends javax.swing.JFrame {
+
     //Variables Globales
     String CurrentUserRole = "";
     String CurrentuName = "";
@@ -33,14 +34,14 @@ public class Log_In extends javax.swing.JFrame {
     String productoUPCToUpdate = "";
     boolean compraFinalizada = false;
     String currentFactNum = "";
-    
+
     //AdminDB bd = new AdminDB();
     /**
      * Creates new form Log_In
      */
     public Log_In() {
         //bd.Conectarme();
-        
+
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -184,7 +185,6 @@ public class Log_In extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         TF_nomProductoUpdate = new javax.swing.JTextField();
-        TF_CantidadProductoUpdate = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         TF_PrecioProductoUpdate = new javax.swing.JTextField();
@@ -194,6 +194,7 @@ public class Log_In extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         TF_ReOrdenProductoUpdate = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
+        JS_ProdCantidadUpdate = new javax.swing.JSpinner();
         JD_UpdateCliente = new javax.swing.JDialog();
         jPanel13 = new javax.swing.JPanel();
         jLabel51 = new javax.swing.JLabel();
@@ -781,6 +782,9 @@ public class Log_In extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_DeleteProductoMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_DeleteProductoMouseEntered(evt);
+            }
         });
 
         jScrollPane2.setViewportView(JTB_TablaProductos);
@@ -1223,6 +1227,11 @@ public class Log_In extends javax.swing.JFrame {
                 btn_salirInsertProductoMouseClicked(evt);
             }
         });
+        btn_salirInsertProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salirInsertProductoActionPerformed(evt);
+            }
+        });
 
         jLabel26.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
@@ -1259,6 +1268,9 @@ public class Log_In extends javax.swing.JFrame {
         btn_CrearProducto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_CrearProductoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_CrearProductoMouseEntered(evt);
             }
         });
 
@@ -1603,6 +1615,8 @@ public class Log_In extends javax.swing.JFrame {
         jLabel48.setForeground(new java.awt.Color(255, 255, 255));
         jLabel48.setText("Tamaño");
 
+        JS_ProdCantidadUpdate.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
@@ -1636,11 +1650,10 @@ public class Log_In extends javax.swing.JFrame {
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CB_TamProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TF_MarcaProductoUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                        .addComponent(TF_CantidadProductoUpdate)))
+                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_MarcaProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JS_ProdCantidadUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
@@ -1669,9 +1682,9 @@ public class Log_In extends javax.swing.JFrame {
                     .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TF_CantidadProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TF_PrecioProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                    .addComponent(TF_PrecioProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JS_ProdCantidadUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1679,7 +1692,7 @@ public class Log_In extends javax.swing.JFrame {
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CB_TamProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TF_ReOrdenProductoUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_ConfUpdateProd, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_salirUpdateProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -3088,70 +3101,61 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_TiposProductoActionPerformed
 
     private void btn_LogInConfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_LogInConfMouseClicked
-        if (!jtf_NombreUser.getText().equals("") && !jtf_PassUser.getText().equals("")){//
+        if (!jtf_NombreUser.getText().equals("") && !jtf_PassUser.getText().equals("")) {//
             try {
-                
+
                 String uname = jtf_NombreUser.getText();
                 String pass = jtf_PassUser.getText();
                 AdminDB dbcon = new AdminDB();
-                String dataToSelect = "select * from usuario where us_nombre = '"+uname+"' and contraseña = '"+pass+"'";
+                String dataToSelect = "select * from usuario where us_nombre = '" + uname + "' and contraseña = '" + pass + "'";
                 rst = dbcon.ReturnResultSet(dataToSelect);
-                
-                if (rst.next()){
+
+                if (rst.next()) {
                     CurrentUserRole = rst.getString("rol");
                     CurrentID = rst.getString("us_id");
-                    System.out.println("Current ID is: "+CurrentID);
-                    
-                    if (CurrentUserRole.equals("Admin")){
+                    System.out.println("Current ID is: " + CurrentID);
+
+                    if (CurrentUserRole.equals("Admin")) {
                         this.setVisible(false);
-                        JOptionPane.showMessageDialog(null, "Log In Exitoso.\nBienvenido, "+jtf_NombreUser.getText());
-                        
-                        
+                        JOptionPane.showMessageDialog(null, "Log In Exitoso.\nBienvenido, " + jtf_NombreUser.getText());
+
                         CurrentuName = jtf_NombreUser.getText();
                         CurrentPass = jtf_PassUser.getText();
-                        
+
                         //Setear al usuario como activo
-                        dbcon.Ingreso("update usuario\n" +
-                                    "set activo = 'true'\n" +
-                                    "where us_nombre = '"+CurrentuName+"' and contraseña = '"+CurrentPass+"'");
-                        
-                        
+                        dbcon.Ingreso("update usuario\n"
+                                + "set activo = 'true'\n"
+                                + "where us_nombre = '" + CurrentuName + "' and contraseña = '" + CurrentPass + "'");
+
                         //Se abre la ventana principal
                         JD_MainScreen.pack();
                         JD_MainScreen.setModal(false);
                         JD_MainScreen.setLocationRelativeTo(this);
                         JD_MainScreen.setVisible(true);
-                        
-                        
-                        
-                        
-                    }
-                    else if (CurrentUserRole.equals("Cliente")){
+
+                    } else if (CurrentUserRole.equals("Cliente")) {
                         this.setVisible(false);
-                        JOptionPane.showMessageDialog(null, "Log In Exitoso.\nBienvenido, "+jtf_NombreUser.getText());
+                        JOptionPane.showMessageDialog(null, "Log In Exitoso.\nBienvenido, " + jtf_NombreUser.getText());
                         AbrirVentana(JD_MainClientes);
-                    }
-                    else if (CurrentUserRole.equals("Vendedor")){
+                    } else if (CurrentUserRole.equals("Vendedor")) {
                         this.setVisible(false);
-                        JOptionPane.showMessageDialog(null, "Log In Exitoso.\nBienvenido, "+jtf_NombreUser.getText());
+                        JOptionPane.showMessageDialog(null, "Log In Exitoso.\nBienvenido, " + jtf_NombreUser.getText());
                         AbrirVentana(JD_MainVendedor);
                     }
-                }
-                else{
+                } else {
                     JOptionPane.showMessageDialog(null, "Usuario no encontrado.\nIntente de nuevo.");
                 }
-                
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Llene ambos text fields.");
         }
-        
+
         jtf_NombreUser.setText("");
         jtf_PassUser.setText("");
-        
+
         /*
         if ( jtf_NombreUser.getText().equals("Admin") && jtf_PassUser.getText().equals("1234")){
             
@@ -3162,20 +3166,20 @@ public class Log_In extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrecto.\nIntente de nuevo.");
         }
-        */
-        
+         */
+
     }//GEN-LAST:event_btn_LogInConfMouseClicked
 
     private void btn_salirMainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirMainMouseClicked
         int opcion = JOptionPane.showConfirmDialog(null, "Desea salir del usuario actual?", "Salir", JOptionPane.YES_NO_OPTION);
-        if (opcion == 0){
-            
+        if (opcion == 0) {
+
             AdminDB dbcon = new AdminDB();
             //Setear al usuario como Inactivo al salir del programa
-            dbcon.Ingreso("update usuario\n" +
-            "set activo = 'false'\n" +
-            "where us_nombre = '"+CurrentuName+"' and contraseña = '"+CurrentPass+"'");
-            
+            dbcon.Ingreso("update usuario\n"
+                    + "set activo = 'false'\n"
+                    + "where us_nombre = '" + CurrentuName + "' and contraseña = '" + CurrentPass + "'");
+
             JD_MainScreen.setVisible(false);
             this.setVisible(true);
         }
@@ -3192,7 +3196,6 @@ public class Log_In extends javax.swing.JFrame {
             AdminDB dbcon = new AdminDB();
             String dataToSelect = "select * from cliente";
             rst = dbcon.ReturnResultSet(dataToSelect);
-
 
             DefaultTableModel modeloCL = new DefaultTableModel();
             modeloCL.addColumn("ID Cliente");
@@ -3211,7 +3214,7 @@ public class Log_In extends javax.swing.JFrame {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
+
         JD_MainScreen.dispose();
         AbrirVentana(JD_CrudClientes);
     }//GEN-LAST:event_btn_MainClientesMouseClicked
@@ -3223,7 +3226,7 @@ public class Log_In extends javax.swing.JFrame {
 
     private void btn_salirAdminProdsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirAdminProdsMouseClicked
         JD_CrudProductos.dispose();
-        if(CurrentUserRole.equals("Admin"))
+        if (CurrentUserRole.equals("Admin"))
             AbrirVentana(JD_MainScreen);
         else
             AbrirVentana(JD_MainVendedor);
@@ -3240,7 +3243,6 @@ public class Log_In extends javax.swing.JFrame {
             String dataToSelect = "select * from inventory";
             rst = dbcon.ReturnResultSet(dataToSelect);
 
-
             DefaultTableModel modeloPR = new DefaultTableModel();
             modeloPR.addColumn("ID Tienda");
             modeloPR.addColumn("UPC");
@@ -3250,7 +3252,6 @@ public class Log_In extends javax.swing.JFrame {
             modeloPR.addColumn("Precio");
             modeloPR.addColumn("Cantidad");
             modeloPR.addColumn("Reorden");
-            
 
             while (rst.next()) {
                 String IDTienda = rst.getString("t_id");
@@ -3261,7 +3262,7 @@ public class Log_In extends javax.swing.JFrame {
                 String Precio = rst.getString("precio");
                 String Cantidad = rst.getString("cantidad");
                 String Reorden = rst.getString("reorden");
-                
+
                 Object[] obj = {IDTienda, UPC, Nombre_Producto, Tam, Marca, Precio, Cantidad, Reorden};
                 modeloPR.addRow(obj);
             }
@@ -3270,8 +3271,7 @@ public class Log_In extends javax.swing.JFrame {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
-        
+
         JD_MainScreen.dispose();
         AbrirVentana(JD_CrudProductos);
     }//GEN-LAST:event_btn_ProductosMainMouseClicked
@@ -3281,7 +3281,6 @@ public class Log_In extends javax.swing.JFrame {
             AdminDB dbcon = new AdminDB();
             String dataToSelect = "select * from tienda";
             rst = dbcon.ReturnResultSet(dataToSelect);
-
 
             DefaultTableModel modeloT = new DefaultTableModel();
             modeloT.addColumn("ID Tienda");
@@ -3300,7 +3299,7 @@ public class Log_In extends javax.swing.JFrame {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
+
         JD_MainScreen.dispose();
         AbrirVentana(JD_CrudTiendas);
     }//GEN-LAST:event_btn_TiendasMainMouseClicked
@@ -3311,7 +3310,6 @@ public class Log_In extends javax.swing.JFrame {
             String dataToSelect = "select * from tiendas_estrella";
             rst = dbcon.ReturnResultSet(dataToSelect);
 
-
             DefaultTableModel modeloTE = new DefaultTableModel();
             modeloTE.addColumn("ID Tienda");
             modeloTE.addColumn("Nombre Tienda");
@@ -3319,7 +3317,7 @@ public class Log_In extends javax.swing.JFrame {
             while (rst.next()) {
                 String IDTienda = rst.getString("t_id");
                 String Nombre_Tienda = rst.getString("nombre");
-                
+
                 Object[] obj = {IDTienda, Nombre_Tienda};
                 modeloTE.addRow(obj);
             }
@@ -3328,7 +3326,7 @@ public class Log_In extends javax.swing.JFrame {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
+
         JD_MainScreen.dispose();
         AbrirVentana(JD_TiendasEstrella);
     }//GEN-LAST:event_btn_TiendasEstrellaMouseClicked
@@ -3344,7 +3342,6 @@ public class Log_In extends javax.swing.JFrame {
             String dataToSelect = "select * from maspopulatesbytienda";
             rst = dbcon.ReturnResultSet(dataToSelect);
 
-
             DefaultTableModel modeloPET = new DefaultTableModel();
             modeloPET.addColumn("UPC Producto");
             modeloPET.addColumn("Nombre Producto");
@@ -3356,7 +3353,7 @@ public class Log_In extends javax.swing.JFrame {
                 String Nombre_Prod = rst.getString("nombre");
                 String Nombre_Tienda = rst.getString("tienda_nombre");
                 String Cant_Vendida = rst.getString("cantidad_vendida");
-                
+
                 Object[] obj = {UPCProd, Nombre_Prod, Nombre_Tienda, Cant_Vendida};
                 modeloPET.addRow(obj);
             }
@@ -3365,8 +3362,7 @@ public class Log_In extends javax.swing.JFrame {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
-        
+
         JD_MainScreen.dispose();
         AbrirVentana(JD_ProductosEstrella);
     }//GEN-LAST:event_btn_ProdEstrellaMouseClicked
@@ -3377,7 +3373,6 @@ public class Log_In extends javax.swing.JFrame {
             String dataToSelect = "select * from tiposmaspopulares";
             rst = dbcon.ReturnResultSet(dataToSelect);
 
-
             DefaultTableModel modeloTipos = new DefaultTableModel();
             modeloTipos.addColumn("Tipo Producto");
             modeloTipos.addColumn("Orden");
@@ -3385,7 +3380,7 @@ public class Log_In extends javax.swing.JFrame {
             while (rst.next()) {
                 String TipoProd = rst.getString("tipo");
                 String Rank = rst.getString("orden");
-                
+
                 Object[] obj = {TipoProd, Rank};
                 modeloTipos.addRow(obj);
             }
@@ -3394,7 +3389,7 @@ public class Log_In extends javax.swing.JFrame {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
+
         JD_MainScreen.dispose();
         AbrirVentana(JD_TiposProducto);
     }//GEN-LAST:event_btn_TiposProductoMouseClicked
@@ -3406,50 +3401,46 @@ public class Log_In extends javax.swing.JFrame {
 
     private void btn_SalirMenuClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_SalirMenuClientesMouseClicked
         int opcion = JOptionPane.showConfirmDialog(null, "Desea salir del usuario actual?", "Salir", JOptionPane.YES_NO_OPTION);
-        if (opcion == 0){
+        if (opcion == 0) {
             JD_MainClientes.setVisible(false);
             this.setVisible(true);
         }
     }//GEN-LAST:event_btn_SalirMenuClientesMouseClicked
 
     private void btn_salirInsertProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirInsertProductoMouseClicked
-        
-        if (CurrentUserRole.equals("Vendedor")){
+
+        if (CurrentUserRole.equals("Vendedor")) {
             JD_InsertProducto.dispose();
             AbrirVentana(JD_MainVendedor);
-        }
-        else{
+        } else {
             JD_InsertProducto.dispose();
             AbrirVentana(JD_CrudProductos);
         }
-        
-        
+
+
     }//GEN-LAST:event_btn_salirInsertProductoMouseClicked
 
     private void btn_InsertProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InsertProductoMouseClicked
         try {
-            
+
             DefaultComboBoxModel<String> cbmodel = new DefaultComboBoxModel<>();
-            
+
             AdminDB bd = new AdminDB();
             String dataToSelect = "select t_id from tienda";
             rst = bd.ReturnResultSet(dataToSelect);
-            
-            while (rst.next()){
+
+            while (rst.next()) {
                 String tiendaId = rst.getString("t_id");
                 cbmodel.addElement(tiendaId);
             }
-            
-            
+
             CB_IDTienda.setModel(cbmodel);
-            
+
         } catch (Exception e) {
-            
+
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
-        
-        
-        
+
         JD_CrudProductos.dispose();
         AbrirVentana(JD_InsertProducto);
     }//GEN-LAST:event_btn_InsertProductoMouseClicked
@@ -3460,28 +3451,27 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_salirUpdateProductoMouseClicked
 
     private void btn_UpdateProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UpdateProductoMouseClicked
-        if (JTB_TablaProductos.getSelectedRow()>=0){
+        if (JTB_TablaProductos.getSelectedRow() >= 0) {
             String Oldnombre = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 2).toString();
             String marca = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 4).toString();
-            String Precio =  JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 5).toString();
+            String Precio = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 5).toString();
             String cantidad = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 6).toString();
             String reorden = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 7).toString();
-            
+
             productoToUpdate = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 0).toString();
             productoUPCToUpdate = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 1).toString();
 
-            System.out.println("nombre seleccionado = "+Oldnombre);
-      
+            System.out.println("nombre seleccionado = " + Oldnombre);
+
             TF_nomProductoUpdate.setText(Oldnombre);
             TF_MarcaProductoUpdate.setText(marca);
             TF_PrecioProductoUpdate.setText(Precio);
-            TF_CantidadProductoUpdate.setText(cantidad);
+            JS_ProdCantidadUpdate.setValue(Integer.parseInt(cantidad));
             TF_ReOrdenProductoUpdate.setText(reorden);
 
             JD_CrudProductos.dispose();
             AbrirVentana(JD_UpdateProducto);
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Tiene que seleccionar una fila para modificar.");
         }
     }//GEN-LAST:event_btn_UpdateProductoMouseClicked
@@ -3518,12 +3508,11 @@ public class Log_In extends javax.swing.JFrame {
 
     private void btn_MainVendedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_MainVendedoresMouseClicked
         //Prueba de Postgre a JTable
-        
+
         try {
             AdminDB dbcon = new AdminDB();
             String dataToSelect = "select * from vendedor";
             rst = dbcon.ReturnResultSet(dataToSelect);
-
 
             DefaultTableModel modeloV = new DefaultTableModel();
             modeloV.addColumn("ID Vendedor");
@@ -3540,8 +3529,7 @@ public class Log_In extends javax.swing.JFrame {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
-        
+
         JD_MainScreen.dispose();
         AbrirVentana(JD_CrudVendedores);
     }//GEN-LAST:event_btn_MainVendedoresMouseClicked
@@ -3552,21 +3540,19 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_InsertClienteMouseClicked
 
     private void btn_UpdateClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UpdateClienteMouseClicked
-        if (JTB_TablaClientes.getSelectedRow()>=0){
+        if (JTB_TablaClientes.getSelectedRow() >= 0) {
             String Oldnombre = JTB_TablaClientes.getValueAt(JTB_TablaClientes.getSelectedRow(), 1).toString();
             String oldCorreo = JTB_TablaClientes.getValueAt(JTB_TablaClientes.getSelectedRow(), 2).toString();
             clienteToUpdate = JTB_TablaClientes.getValueAt(JTB_TablaClientes.getSelectedRow(), 0).toString();
 
-            System.out.println("nombre seleccionado = "+Oldnombre);
-            System.out.println("correo seleccionado = "+oldCorreo);
+            System.out.println("nombre seleccionado = " + Oldnombre);
+            System.out.println("correo seleccionado = " + oldCorreo);
             TF_NombreClienteUpd.setText(Oldnombre);
             TF_CorreoClienteUpd.setText(oldCorreo);
-
-
+                
             JD_CrudClientes.dispose();
             AbrirVentana(JD_UpdateCliente);
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Tiene que seleccionar una fila para modificar.");
         }
     }//GEN-LAST:event_btn_UpdateClienteMouseClicked
@@ -3577,18 +3563,16 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_InsertTiendaMouseClicked
 
     private void btn_UpdateTiendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UpdateTiendaMouseClicked
-        if (JTB_TablaTiendas.getSelectedRow()>=0){
+        if (JTB_TablaTiendas.getSelectedRow() >= 0) {
             String Oldnombre = JTB_TablaTiendas.getValueAt(JTB_TablaTiendas.getSelectedRow(), 1).toString();
             tiendaToUpdate = JTB_TablaTiendas.getValueAt(JTB_TablaTiendas.getSelectedRow(), 0).toString();
 
-            System.out.println("nombre seleccionado = "+Oldnombre);
-            TF_NombreTienda1.setText(Oldnombre);
-
-
+            System.out.println("nombre seleccionado = " + Oldnombre);
+            TF_NombreTienda1.setText(Oldnombre);    
+            
             JD_CrudTiendas.dispose();
             AbrirVentana(JD_UpdateTienda);
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Tiene que seleccionar una fila para modificar.");
         }
     }//GEN-LAST:event_btn_UpdateTiendaMouseClicked
@@ -3604,62 +3588,55 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_InsertVendedorMouseClicked
 
     private void btn_UpdateVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UpdateVendedorMouseClicked
-        if (JTB_VendedoresAct.getSelectedRow()>=0){
+        if (JTB_VendedoresAct.getSelectedRow() >= 0) {
             String Oldnombre = JTB_VendedoresAct.getValueAt(JTB_VendedoresAct.getSelectedRow(), 1).toString();
             vendToUpdate = JTB_VendedoresAct.getValueAt(JTB_VendedoresAct.getSelectedRow(), 0).toString();
 
-            System.out.println("nombre seleccionado = "+Oldnombre);
+            System.out.println("nombre seleccionado = " + Oldnombre);
             TF_NombreVendedorUpdate.setText(Oldnombre);
-
 
             JD_CrudVendedores.dispose();
             AbrirVentana(JD_UpdateVendedor);
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Tiene que seleccionar una fila para modificar.");
         }
-        
-       
-        
+
+
     }//GEN-LAST:event_btn_UpdateVendedorMouseClicked
 
     private void btn_DeleteVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DeleteVendedorMouseClicked
-        if (JTB_VendedoresAct.getSelectedRow()>=0){
+        if (JTB_VendedoresAct.getSelectedRow() >= 0) {
             int decision = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar este vendedor?", "Eliminar Vendedor", JOptionPane.YES_NO_OPTION);
-            
-            if (decision == 0){
-                
+
+            if (decision == 0) {
+
                 try {
                     AdminDB bd = new AdminDB();
                     String Oldnombre = JTB_VendedoresAct.getValueAt(JTB_VendedoresAct.getSelectedRow(), 1).toString();
                     vendToUpdate = JTB_VendedoresAct.getValueAt(JTB_VendedoresAct.getSelectedRow(), 0).toString();
 
                     //Llamado de Procedimento para eliminar vendedor
-                    bd.Ingreso("CALL eliminar_vendedor('"+vendToUpdate+"');");
-                   
-                    
+                    bd.Ingreso("CALL eliminar_vendedor('" + vendToUpdate + "');");
+
                     //Llamado de Procedimiento para eliminar usuario, si existe
-                    bd.Ingreso("CALL eliminar_usuario('"+vendToUpdate+"');");
-                    
+                    bd.Ingreso("CALL eliminar_usuario('" + vendToUpdate + "');");
+
                     vendToUpdate = "";
                     //Remueve el vendedor de la tabla activa
                     DefaultTableModel model = (DefaultTableModel) JTB_VendedoresAct.getModel();
                     model.removeRow(JTB_VendedoresAct.getSelectedRow());
                     JTB_VendedoresAct.setModel(model);
-                    
 
                     JOptionPane.showMessageDialog(null, "El vendedor ha sido eliminado exitosamente.");
-                    System.out.println("nombre seleccionado = "+Oldnombre);
+                    System.out.println("nombre seleccionado = " + Oldnombre);
 
-                    
                 } catch (Exception exp) {
                     exp.printStackTrace();
                 }
-                
+
             }
-           
-        }
-        else{
+
+        } else {
             JOptionPane.showMessageDialog(null, "Tiene que seleccionar un vendedor para eliminar.");
         }
         // TODO add your handling code here:
@@ -3671,77 +3648,91 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_salirCrudVendMouseClicked
 
     private void btn_CrearTiendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CrearTiendaMouseClicked
-        if (!"".equals(TF_IDTienda.getText()) && !"".equals(TF_NombreTienda.getText())){
+        if (!"".equals(TF_IDTienda.getText()) && !"".equals(TF_NombreTienda.getText())) {
             AdminDB bd = new AdminDB();
             String idtienda = TF_IDTienda.getText();
             String nomtienda = TF_NombreTienda.getText();
             String horario = CB_HorarioTienda.getSelectedItem().toString();
-            
-            
+
             //Llamado de Procedimiento para insertar tienda
-            bd.Ingreso("CALL insertar_tienda('"+idtienda+"', '"+nomtienda+"', '"+horario+"');");
+            bd.Ingreso("CALL insertar_tienda('" + idtienda + "', '" + nomtienda + "', '" + horario + "');");
+            
+            
+            DefaultTableModel model = (DefaultTableModel) JTB_TablaTiendas.getModel();
+            Object[] obj = {idtienda, nomtienda, horario};
+            model.addRow(obj);
+            JTB_TablaTiendas.setModel(model);
+                    
             TF_IDTienda.setText("");
             TF_NombreTienda.setText("");
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Para insertar, llene todos los campos necesarios.");
         }
     }//GEN-LAST:event_btn_CrearTiendaMouseClicked
 
     private void btn_ConfInsertClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ConfInsertClientMouseClicked
-        if (!TF_usernameCliente.getText().equals("") && !TF_passCliente.getText().equals("") && !TF_NombreCliente.getText().equals("") && !TF_CorreoCliente.getText().equals("") ){
+        if (!TF_usernameCliente.getText().equals("") && !TF_passCliente.getText().equals("") && !TF_NombreCliente.getText().equals("") && !TF_CorreoCliente.getText().equals("")) {
             AdminDB bd = new AdminDB();
             String id = generateID();
             String usernm = TF_usernameCliente.getText();
             String password = TF_passCliente.getText();
             String realname = TF_NombreCliente.getText();
             String correo = TF_CorreoCliente.getText();
-            
+
             System.out.println("El id que se genero fue " + id);
-            
+
             //Llamado de Procedimiento para insertar usuario
-            bd.Ingreso("CALL insertar_usuario('"+id+"', '"+usernm+"', '"+password+"', 'Cliente');");
-            
+            bd.Ingreso("CALL insertar_usuario('" + id + "', '" + usernm + "', '" + password + "', 'Cliente');");
+
             //Llamado de Procedimento para insertar cliente
-            bd.Ingreso("CALL insertar_cliente('"+id+"', '"+realname+"', '"+correo+"');");
+            bd.Ingreso("CALL insertar_cliente('" + id + "', '" + realname + "', '" + correo + "');");
+            
+            DefaultTableModel model = (DefaultTableModel) JTB_TablaClientes.getModel();
+            Object[] obj = {id, realname, correo};
+            model.addRow(obj);
+            JTB_TablaClientes.setModel(model);  
+            
             TF_usernameCliente.setText("");
             TF_passCliente.setText("");
             TF_NombreCliente.setText("");
             TF_CorreoCliente.setText("");
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Para insertar, llene todos los campos necesarios.");
         }
     }//GEN-LAST:event_btn_ConfInsertClientMouseClicked
 
     private void btn_ConfInsertVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ConfInsertVendedorMouseClicked
-        
-        if (!TF_UsernameVendedor.getText().equals("") && !TF_passVendedor.getText().equals("") && !TF_NombreVendedor.getText().equals("")){
+
+        if (!TF_UsernameVendedor.getText().equals("") && !TF_passVendedor.getText().equals("") && !TF_NombreVendedor.getText().equals("")) {
             AdminDB bd = new AdminDB();
             String id = generateID();
             String usernm = TF_UsernameVendedor.getText();
             String password = TF_passVendedor.getText();
             String realname = TF_NombreVendedor.getText();
-            
-            
+
             System.out.println("El id que se genero fue " + id);
-            
+
             //Llamado de Procedimiento para insertar usuario
-            bd.Ingreso("CALL insertar_usuario('"+id+"', '"+usernm+"', '"+password+"', 'Vendedor');");
-            
+            bd.Ingreso("CALL insertar_usuario('" + id + "', '" + usernm + "', '" + password + "', 'Vendedor');");
+
             //Llamado de Procedimento para insertar vendedor
-            bd.Ingreso("CALL insertar_vendedor('"+id+"', '"+realname+"');");
+            bd.Ingreso("CALL insertar_vendedor('" + id + "', '" + realname + "');");
+            
+            DefaultTableModel model = (DefaultTableModel) JTB_VendedoresAct.getModel();
+            Object[] obj = {id, realname};
+            model.addRow(obj);
+            JTB_VendedoresAct.setModel(model);
+            
             TF_UsernameVendedor.setText("");
             TF_passVendedor.setText("");
             TF_NombreVendedor.setText("");
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Para insertar, llene todos los campos necesarios.");
         }
     }//GEN-LAST:event_btn_ConfInsertVendedorMouseClicked
 
     private void btn_CrearProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CrearProductoMouseClicked
-        if (!TF_UpcProducto.getText().equals("") && !TF_nomProducto.getText().equals("") && !TF_EmbalajeProducto.getText().equals("") && !TF_MarcaProducto.getText().equals("") && !TF_TipoProducto.getText().equals("")&&!TF_PrecioProd.getText().equals("")&&EsUnDouble(TF_PrecioProd.getText())){
+        if (!TF_UpcProducto.getText().equals("") && !TF_nomProducto.getText().equals("") && !TF_EmbalajeProducto.getText().equals("") && !TF_MarcaProducto.getText().equals("") && !TF_TipoProducto.getText().equals("") && !TF_PrecioProd.getText().equals("") && EsUnDouble(TF_PrecioProd.getText())) {
             JOptionPane.showMessageDialog(null, "Si.");
             AdminDB bd = new AdminDB();
             String nameprod = TF_nomProducto.getText();
@@ -3754,21 +3745,25 @@ public class Log_In extends javax.swing.JFrame {
             String precio = TF_PrecioProd.getText();
             String reorden = TF_ReordenProd.getText();
             String IdTienda = CB_IDTienda.getSelectedItem().toString();
-            
+
             //Llamado de procedimiento para insertar producto
-            bd.Ingreso("CALL insertar_producto('"+upc+"', '"+nameprod+"', '"+tam+"', '"+embalaje+"', '"+marca+"');");
-            
+            bd.Ingreso("CALL insertar_producto('" + upc + "', '" + nameprod + "', '" + tam + "', '" + embalaje + "', '" + marca + "');");
+
             //Inserta en tipos
-            bd.Ingreso("insert into tipos (upc, tipo) values ('"+upc+"', '"+tipo+"')");
-            
+            bd.Ingreso("insert into tipos (upc, tipo) values ('" + upc + "', '" + tipo + "')");
+
             //Inserta en inventario
-            bd.Ingreso("insert into inventario (t_id, upc, precio, cantidad, reorden) values ('"+IdTienda+"', '"+upc+"', '"+precio+"', '"+cantidad+"', '"+reorden+"')");
- 
-            
+            bd.Ingreso("insert into inventario (t_id, upc, precio, cantidad, reorden) values ('" + IdTienda + "', '" + upc + "', '" + precio + "', '" + cantidad + "', '" + reorden + "')");
+
             //Si hay un vendedor dentro del programa, que inserte en la relacion tiene
-            if (CurrentUserRole.equals("Vendedor")){
-                bd.Ingreso("insert into vende (v_id, upc) values ('"+CurrentID+"', '"+upc+"')");
+            if (CurrentUserRole.equals("Vendedor")) {
+                bd.Ingreso("insert into vende (v_id, upc) values ('" + CurrentID + "', '" + upc + "')");
             }
+            Object[] obj = {IdTienda, upc, nameprod, tam, marca, precio, cantidad, reorden};
+            DefaultTableModel model = (DefaultTableModel) JTB_TablaProductos.getModel();
+            model.addRow(obj);
+            JTB_TablaProductos.setModel(model);
+            
             TF_UpcProducto.setText("");
             TF_nomProducto.setText("");
             TF_EmbalajeProducto.setText("");
@@ -3777,13 +3772,11 @@ public class Log_In extends javax.swing.JFrame {
             TF_PrecioProd.setText("");
             TF_ReordenProd.setText("");
             JS_Cantidad.setValue(0);
-            
-        }
-        else{
-            if(EsUnDouble(TF_PrecioProd.getText())){
+
+        } else {
+            if (EsUnDouble(TF_PrecioProd.getText())) {
                 JOptionPane.showMessageDialog(null, "Para insertar, llene todos los campos necesarios.");
-            }
-            else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Ingrese un precio valido.");
             }
         }
@@ -3794,7 +3787,6 @@ public class Log_In extends javax.swing.JFrame {
             AdminDB dbcon = new AdminDB();
             String dataToSelect = "select * from comprasxcliente";
             rst = dbcon.ReturnResultSet(dataToSelect);
-
 
             DefaultTableModel modeloCxC = new DefaultTableModel();
             modeloCxC.addColumn("ID Cliente");
@@ -3813,7 +3805,7 @@ public class Log_In extends javax.swing.JFrame {
                 String NomProd = rst.getString("producto_nombre");
                 String TotalFact = rst.getString("factura_total");
                 String FechaFact = rst.getString("factura_fecha");
-                
+
                 Object[] obj = {IDCliente, NomCliente, NumFact, UPC, NomProd, TotalFact, FechaFact};
                 modeloCxC.addRow(obj);
             }
@@ -3823,114 +3815,141 @@ public class Log_In extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        
         JD_MainScreen.dispose();
         AbrirVentana(JD_ComprasxCliente);
     }//GEN-LAST:event_btn_ComprasxClienteMouseClicked
 
     private void btn_SalirComprasxClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_SalirComprasxClienteMouseClicked
-        
+
         JD_ComprasxCliente.dispose();
-        if(CurrentUserRole.equals("Admin"))
+        if (CurrentUserRole.equals("Admin"))
             AbrirVentana(JD_MainScreen);
         else
             AbrirVentana(JD_MainVendedor);
     }//GEN-LAST:event_btn_SalirComprasxClienteMouseClicked
 
     private void btn_ConfUpdateVendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ConfUpdateVendMouseClicked
-        if (!TF_NombreVendedorUpdate.getText().equals("")){
+        if (!TF_NombreVendedorUpdate.getText().equals("")) {
             AdminDB bd = new AdminDB();
-            
+
             String realname = TF_NombreVendedorUpdate.getText();
 
             //Llamado de Procedimento para actualizar vendedor
-            bd.Ingreso("CALL actualizar_vendedor('"+vendToUpdate+"', '"+realname+"');");
+            bd.Ingreso("CALL actualizar_vendedor('" + vendToUpdate + "', '" + realname + "');");
             vendToUpdate = "";
             
-            TF_NombreVendedorUpdate.setText("");
+            int row=JTB_VendedoresAct.getSelectedRow();
+            DefaultTableModel model = (DefaultTableModel) JTB_VendedoresAct.getModel();
+            Object[] obj = {JTB_VendedoresAct.getValueAt(row, 0), realname};
+            model.removeRow(row);
+            model.addRow(obj);
+            JTB_VendedoresAct.setModel(model);
             
+            
+            TF_NombreVendedorUpdate.setText("");
+
             JD_UpdateVendedor.dispose();
             AbrirVentana(JD_MainScreen);
-            
-        }
-        else{
+
+        } else {
             JOptionPane.showMessageDialog(null, "Para actualizar, llene todos los campos necesarios.");
         }
     }//GEN-LAST:event_btn_ConfUpdateVendMouseClicked
 
     private void btn_UpdateTiendaConfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UpdateTiendaConfMouseClicked
-        if (!TF_NombreTienda1.getText().equals("")){
+        if (!TF_NombreTienda1.getText().equals("")) {
             AdminDB bd = new AdminDB();
-            
+
             String realname = TF_NombreTienda1.getText();
             String type = (String) CB_HorarioTienda1.getSelectedItem();
 
             //Llamado de Procedimento para actualizar vendedor
-            bd.Ingreso("CALL actualizar_tienda('"+tiendaToUpdate+"', '"+realname+"', '"+type+"');");
+            bd.Ingreso("CALL actualizar_tienda('" + tiendaToUpdate + "', '" + realname + "', '" + type + "');");
             tiendaToUpdate = "";
             
-            TF_NombreTienda1.setText("");
+            int row=JTB_TablaTiendas.getSelectedRow();
+            DefaultTableModel model = (DefaultTableModel) JTB_TablaTiendas.getModel();
+            Object[] obj = {JTB_TablaTiendas.getValueAt(row, 0), realname, type};
+            model.removeRow(row);
+            model.addRow(obj);
+            JTB_TablaTiendas.setModel(model);
             
+            
+            TF_NombreTienda1.setText("");
+
             JD_UpdateTienda.dispose();
             AbrirVentana(JD_MainScreen);
-            
-        }
-        else{
+
+        } else {
             JOptionPane.showMessageDialog(null, "Para actualizar, llene todos los campos necesarios.");
         }
     }//GEN-LAST:event_btn_UpdateTiendaConfMouseClicked
 
     private void btn_ConfUpdateClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ConfUpdateClientMouseClicked
-        if (!TF_NombreClienteUpd.getText().equals("") || !TF_NombreClienteUpd.getText().equals("")){
+        if (!TF_NombreClienteUpd.getText().equals("") || !TF_NombreClienteUpd.getText().equals("")) {
             AdminDB bd = new AdminDB();
-            
+
             String realname = TF_NombreClienteUpd.getText();
             String newCorreo = TF_CorreoClienteUpd.getText();
 
             //Llamado de Procedimento para actualizar vendedor
-            bd.Ingreso("CALL actualizar_cliente('"+clienteToUpdate+"', '"+realname+"', '"+newCorreo+"');");
+            bd.Ingreso("CALL actualizar_cliente('" + clienteToUpdate + "', '" + realname + "', '" + newCorreo + "');");
             clienteToUpdate = "";
+            
+            int row=JTB_TablaClientes.getSelectedRow();
+            DefaultTableModel model = (DefaultTableModel) JTB_TablaClientes.getModel();
+            Object[] obj = {JTB_TablaClientes.getValueAt(row, 0), realname, newCorreo};
+            model.removeRow(row);
+            model.addRow(obj);
+            JTB_TablaClientes.setModel(model);
+            
             TF_NombreClienteUpd.setText("");
             TF_CorreoClienteUpd.setText("");
             JD_UpdateCliente.dispose();
             AbrirVentana(JD_MainScreen);
-            
-        }
-        else{
+
+        } else {
             JOptionPane.showMessageDialog(null, "Para actualizar, llene todos los campos necesarios.");
         }
     }//GEN-LAST:event_btn_ConfUpdateClientMouseClicked
 
     private void btn_ConfUpdateProdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ConfUpdateProdMouseClicked
-        if (!TF_nomProductoUpdate.getText().equals("") && !TF_MarcaProductoUpdate.getText().equals("") && !TF_PrecioProductoUpdate.getText().equals("") && !TF_CantidadProductoUpdate.getText().equals("") && !TF_ReOrdenProductoUpdate.getText().equals("")&& EsUnDouble(TF_PrecioProductoUpdate.getText())){
-          
+        if (!TF_nomProductoUpdate.getText().equals("") && !TF_MarcaProductoUpdate.getText().equals("") && !TF_PrecioProductoUpdate.getText().equals("")  && !TF_ReOrdenProductoUpdate.getText().equals("") && EsUnDouble(TF_PrecioProductoUpdate.getText())) {
             AdminDB bd = new AdminDB();
-            
+
             String realname = TF_nomProductoUpdate.getText();
             String newMarca = TF_MarcaProductoUpdate.getText();
-            double newPrecio = Double.parseDouble( TF_PrecioProductoUpdate.getText());
-            String newCantidad = TF_CantidadProductoUpdate.getText();
+            double newPrecio = Double.parseDouble(TF_PrecioProductoUpdate.getText());
+            String newCantidad = JS_ProdCantidadUpdate.getValue().toString();
             String newReorden = TF_ReOrdenProductoUpdate.getText();
             String newTam = CB_TamProductoUpdate.getSelectedItem().toString();
 
             //Llamado de Procedimento para actualizar vendedor
-            bd.Ingreso("CALL actualizar_inventario_y_producto('"+productoToUpdate+"', '"+productoUPCToUpdate+"', "+newPrecio+", "+newCantidad+", '"+newReorden+"', '"+realname+"', '"+newMarca+"', '"+newTam+"');");
+            int row=JTB_TablaProductos.getSelectedRow();
+            bd.Ingreso("CALL actualizar_inventario_y_producto('" + productoToUpdate + "', '" + productoUPCToUpdate + "', " + newPrecio + ", " + newCantidad + ", '" + newReorden + "', '" + realname + "', '" + newMarca + "', '" + newTam + "');");
+            DefaultTableModel model = (DefaultTableModel) JTB_TablaProductos.getModel();
+            Object[] obj = {JTB_TablaProductos.getValueAt(row, 0), JTB_TablaProductos.getValueAt(row, 1), realname, newTam, newMarca, newPrecio, newCantidad, newReorden};
+            model.removeRow(row);
+            model.addRow(obj);
+            JTB_TablaProductos.setModel(model);
+            
             clienteToUpdate = "";
-            productoUPCToUpdate="";
+            productoUPCToUpdate = "";
             TF_nomProductoUpdate.setText("");
             TF_PrecioProductoUpdate.setText("");
             TF_ReOrdenProductoUpdate.setText("");
             TF_MarcaProductoUpdate.setText("");
-            TF_CantidadProductoUpdate.setText("");
+            JS_ProdCantidadUpdate.setValue(0);
             JD_UpdateProducto.dispose();
-            AbrirVentana(JD_MainScreen);
-            
-        }
-        else{
-            if(EsUnDouble(TF_PrecioProductoUpdate.getText())){
+            if (CurrentUserRole.equals("Admin"))
+                AbrirVentana(JD_MainScreen);
+            else
+                AbrirVentana(JD_MainVendedor);
+
+        } else {
+            if (EsUnDouble(TF_PrecioProductoUpdate.getText())) {
                 JOptionPane.showMessageDialog(null, "Para actualizar, llene todos los campos necesarios.");
-            }
-            else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Ingrese un precio valido.");
             }
         }
@@ -3943,7 +3962,6 @@ public class Log_In extends javax.swing.JFrame {
             String dataToSelect = "select * from masvendidosporubic";
             rst = dbcon.ReturnResultSet(dataToSelect);
 
-
             DefaultTableModel modeloPXP = new DefaultTableModel();
             modeloPXP.addColumn("UPC Producto");
             modeloPXP.addColumn("Nombre Producto");
@@ -3953,8 +3971,7 @@ public class Log_In extends javax.swing.JFrame {
                 String UPCProd = rst.getString("upc");
                 String Nombre_Prod = rst.getString("nombre");
                 String Ubicacion = rst.getString("ubication");
-                
-                
+
                 Object[] obj = {UPCProd, Nombre_Prod, Ubicacion};
                 modeloPXP.addRow(obj);
             }
@@ -3963,8 +3980,7 @@ public class Log_In extends javax.swing.JFrame {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
-        
+
         JD_MainScreen.dispose();
         AbrirVentana(JD_ProductosxPais);
     }//GEN-LAST:event_btn_ProdxPaisMouseClicked
@@ -3975,12 +3991,11 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_SalirProductosxPaisMouseClicked
 
     private void btn_CocavsPepsiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CocavsPepsiMouseClicked
-        
+
         try {
             AdminDB dbcon = new AdminDB();
             String dataToSelect = "select * from ventas_coca_vs_pepsi";
             rst = dbcon.ReturnResultSet(dataToSelect);
-
 
             DefaultTableModel modeloCVP = new DefaultTableModel();
             modeloCVP.addColumn("Nombre Tienda");
@@ -3991,8 +4006,7 @@ public class Log_In extends javax.swing.JFrame {
                 String NomTienda = rst.getString("tienda_nombre");
                 String VentasCoca = rst.getString("ventas_coca");
                 String VentasPepsi = rst.getString("ventas_pepsi");
-                
-                
+
                 Object[] obj = {NomTienda, VentasCoca, VentasPepsi};
                 modeloCVP.addRow(obj);
             }
@@ -4001,8 +4015,7 @@ public class Log_In extends javax.swing.JFrame {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
-        
+
         JD_MainScreen.dispose();
         AbrirVentana(JD_CocavsPepsi);
     }//GEN-LAST:event_btn_CocavsPepsiMouseClicked
@@ -4013,43 +4026,39 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_SalirCocaPepsiMouseClicked
 
     private void btn_DeleteTiendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DeleteTiendaMouseClicked
-        
-        if (JTB_TablaTiendas.getSelectedRow()>=0){
+
+        if (JTB_TablaTiendas.getSelectedRow() >= 0) {
             int decision = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar esta tienda\nEsto causara que su inventario, ubicaciones y?", "Eliminar Tienda", JOptionPane.YES_NO_OPTION);
-            
-            if (decision == 0){
-                
+
+            if (decision == 0) {
+
                 try {
                     AdminDB bd = new AdminDB();
                     String Oldnombre = JTB_TablaTiendas.getValueAt(JTB_TablaTiendas.getSelectedRow(), 1).toString();
                     tiendaToUpdate = JTB_TablaTiendas.getValueAt(JTB_TablaTiendas.getSelectedRow(), 0).toString();
 
                     //Llamado de Procedimento para eliminar tienda
-                    bd.Ingreso("CALL eliminar_tienda('"+tiendaToUpdate+"');");
+                    bd.Ingreso("CALL eliminar_tienda('" + tiendaToUpdate + "');");
                     tiendaToUpdate = "";
-                    
-                    
+
                     //Remueve la tienda de la tabla activa
                     DefaultTableModel model = (DefaultTableModel) JTB_TablaTiendas.getModel();
                     model.removeRow(JTB_TablaTiendas.getSelectedRow());
                     JTB_TablaTiendas.setModel(model);
-                    
 
                     JOptionPane.showMessageDialog(null, "La tienda ha sido eliminado exitosamente.");
-                    System.out.println("nombre seleccionado = "+Oldnombre);
+                    System.out.println("nombre seleccionado = " + Oldnombre);
 
-                    
                 } catch (Exception exp) {
                     exp.printStackTrace();
                 }
-                
+
             }
-           
-        }
-        else{
+
+        } else {
             JOptionPane.showMessageDialog(null, "Tiene que seleccionar una tienda para eliminar.");
         }
-        
+
     }//GEN-LAST:event_btn_DeleteTiendaMouseClicked
 
     private void btn_MostrarVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_MostrarVentasMouseClicked
@@ -4057,7 +4066,6 @@ public class Log_In extends javax.swing.JFrame {
             AdminDB dbcon = new AdminDB();
             String dataToSelect = "select * from historial_ventas_tienda";
             rst = dbcon.ReturnResultSet(dataToSelect);
-
 
             DefaultTableModel modeloHT = new DefaultTableModel();
             modeloHT.addColumn("ID Tienda");
@@ -4070,8 +4078,7 @@ public class Log_In extends javax.swing.JFrame {
                 String NF = rst.getString("numero_factura");
                 String UPC = rst.getString("producto_upc");
                 String FF = rst.getString("fecha_factura");
-                
-                
+
                 Object[] obj = {IDT, NF, UPC, FF};
                 modeloHT.addRow(obj);
             }
@@ -4080,7 +4087,7 @@ public class Log_In extends javax.swing.JFrame {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
- 
+
         JD_CrudTiendas.dispose();
         AbrirVentana(JD_VentasxTienda);
     }//GEN-LAST:event_btn_MostrarVentasMouseClicked
@@ -4091,45 +4098,41 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_SalirVentasxTiendaMouseClicked
 
     private void btn_DeleteClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DeleteClienteMouseClicked
-        if (JTB_TablaClientes.getSelectedRow()>=0){
+        if (JTB_TablaClientes.getSelectedRow() >= 0) {
             int decision = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar este cliente?", "Eliminar Cliente", JOptionPane.YES_NO_OPTION);
-            
-            if (decision == 0){
-                
+
+            if (decision == 0) {
+
                 try {
                     AdminDB bd = new AdminDB();
                     String Oldnombre = JTB_TablaClientes.getValueAt(JTB_TablaClientes.getSelectedRow(), 1).toString();
                     clienteToUpdate = JTB_TablaClientes.getValueAt(JTB_TablaClientes.getSelectedRow(), 0).toString();
 
                     //Llamado de Procedimento para eliminar cliente
-                    bd.Ingreso("CALL eliminar_cliente('"+clienteToUpdate+"');");
-                   
-                    
+                    bd.Ingreso("CALL eliminar_cliente('" + clienteToUpdate + "');");
+
                     //Llamado de Procedimiento para eliminar usuario, si existe
-                    bd.Ingreso("CALL eliminar_usuario('"+clienteToUpdate+"');");
-                    
+                    bd.Ingreso("CALL eliminar_usuario('" + clienteToUpdate + "');");
+
                     clienteToUpdate = "";
                     //Remueve el cliente de la tabla activa
                     DefaultTableModel model = (DefaultTableModel) JTB_TablaClientes.getModel();
                     model.removeRow(JTB_TablaClientes.getSelectedRow());
                     JTB_TablaClientes.setModel(model);
-                    
 
                     JOptionPane.showMessageDialog(null, "El cliente ha sido eliminado exitosamente.");
-                    System.out.println("nombre seleccionado = "+Oldnombre);
+                    System.out.println("nombre seleccionado = " + Oldnombre);
 
-                    
                 } catch (Exception exp) {
                     exp.printStackTrace();
                 }
-                
+
             }
-           
-        }
-        else{
+
+        } else {
             JOptionPane.showMessageDialog(null, "Tiene que seleccionar un cliente para eliminar.");
         }
-                
+
     }//GEN-LAST:event_btn_DeleteClienteMouseClicked
 
     private void btn_SalirComprarProdClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_SalirComprarProdClienteMouseClicked
@@ -4138,12 +4141,11 @@ public class Log_In extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_SalirComprarProdClienteMouseClicked
 
     private void btn_ComprarProductMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ComprarProductMouseClicked
-        
+
         try {
             AdminDB dbcon = new AdminDB();
             String dataToSelect = "select * from inventory";
             rst = dbcon.ReturnResultSet(dataToSelect);
-
 
             DefaultTableModel modeloPR = new DefaultTableModel();
             modeloPR.addColumn("ID Tienda");
@@ -4154,7 +4156,6 @@ public class Log_In extends javax.swing.JFrame {
             modeloPR.addColumn("Precio");
             modeloPR.addColumn("Cantidad");
             modeloPR.addColumn("Reorden");
-            
 
             while (rst.next()) {
                 String IDTienda = rst.getString("t_id");
@@ -4165,7 +4166,7 @@ public class Log_In extends javax.swing.JFrame {
                 String Precio = rst.getString("precio");
                 String Cantidad = rst.getString("cantidad");
                 String Reorden = rst.getString("reorden");
-                
+
                 Object[] obj = {IDTienda, UPC, Nombre_Producto, Tam, Marca, Precio, Cantidad, Reorden};
                 modeloPR.addRow(obj);
             }
@@ -4174,7 +4175,7 @@ public class Log_In extends javax.swing.JFrame {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
+
         currentFactNum = "F" + generateID().substring(0, 5);
         System.out.println("El numero de factura generado es: " + currentFactNum);
         JD_MainClientes.dispose();
@@ -4183,35 +4184,42 @@ public class Log_In extends javax.swing.JFrame {
 
     private void btn_ClienteBuyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ClienteBuyMouseClicked
         try {
-            
-            if (JTB_CompraProdCliente.getSelectedRow() >= 0){
-                AdminDB bd = new AdminDB();
-                String dataToSelect = "select * from factura where numero = '"+currentFactNum+"'";
-                rst = bd.ReturnResultSet(dataToSelect);
 
-                String IDtienda = JTB_CompraProdCliente.getValueAt(JTB_CompraProdCliente.getSelectedRow(), 0).toString();
-                String upc = JTB_CompraProdCliente.getValueAt(JTB_CompraProdCliente.getSelectedRow(), 1).toString();
-                String nomProd = JTB_CompraProdCliente.getValueAt(JTB_CompraProdCliente.getSelectedRow(), 2).toString();
+            int disp = 0;
+            if (JTB_CompraProdCliente.getSelectedRow() >= 0) {
+                JOptionPane.showMessageDialog(null, "SI");
+                disp = Integer.parseInt(JTB_CompraProdCliente.getValueAt(JTB_CompraProdCliente.getSelectedRow(), 5).toString());
+                if (disp > 0) {
+                    JOptionPane.showMessageDialog(null, "Si te entra entera");
+                    /*AdminDB bd = new AdminDB();
+                    String dataToSelect = "select * from factura where numero = '" + currentFactNum + "'";
+                    rst = bd.ReturnResultSet(dataToSelect);
 
+                    String IDtienda = JTB_CompraProdCliente.getValueAt(JTB_CompraProdCliente.getSelectedRow(), 0).toString();
+                    String upc = JTB_CompraProdCliente.getValueAt(JTB_CompraProdCliente.getSelectedRow(), 1).toString();
+                    String nomProd = JTB_CompraProdCliente.getValueAt(JTB_CompraProdCliente.getSelectedRow(), 2).toString();
 
-                //Verificar si existe la factura para ese cliente
-                if (rst.next()){
-                    //Si existe, agregar a detalles_factura solamente
-                    bd.Ingreso("insert into detalles_factura (numero, upc) values ('"+currentFactNum+"', '"+upc+"');");
+                    //Verificar si existe la factura para ese cliente
+                    if (rst.next()) {
+                        //Si existe, agregar a detalles_factura solamente
+                        bd.Ingreso("insert into detalles_factura (numero, upc) values ('" + currentFactNum + "', '" + upc + "');");
 
+                    } else {
+                        //Si no existe, crear una nueva factura
+                        bd.Ingreso("insert into factura (numero, t_id, c_id, fecha, subtotal, isv, total) values ('" + currentFactNum + "', '" + IDtienda + "', '" + CurrentID + "', '2024-09-16', '300', '20', '360');");
+
+                        //Luego, agregar a detalles_factura
+                        bd.Ingreso("insert into detalles_factura (numero, upc) values ('" + currentFactNum + "', '" + upc + "');");
+
+                    }
+                    */
                 }
-                else{
-                    //Si no existe, crear una nueva factura
-                    bd.Ingreso("insert into factura (numero, t_id, c_id, fecha, subtotal, isv, total) values ('"+currentFactNum+"', '"+IDtienda+"', '"+CurrentID+"', '2024-09-16', '300', '20', '360');");
-
-                    //Luego, agregar a detalles_factura
-                    bd.Ingreso("insert into detalles_factura (numero, upc) values ('"+currentFactNum+"', '"+upc+"');");
-                }
-            }
-            else{
+                else
+                    JOptionPane.showMessageDialog(null, "En este momento no este producto no esta disponible");
+            } else {
                 JOptionPane.showMessageDialog(null, "Seleccione un producto para comprar");
             }
-   
+
         } catch (Exception e) {
         }
     }//GEN-LAST:event_btn_ClienteBuyMouseClicked
@@ -4224,9 +4232,8 @@ public class Log_In extends javax.swing.JFrame {
     private void btn_FactClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FactClienteMouseClicked
         try {
             AdminDB dbcon = new AdminDB();
-            String dataToSelect = "select * from comprasbycliente('"+CurrentID+"')";
+            String dataToSelect = "select * from comprasbycliente('" + CurrentID + "')";
             rst = dbcon.ReturnResultSet(dataToSelect);
-
 
             DefaultTableModel modeloHT = new DefaultTableModel();
             modeloHT.addColumn("ID Cliente");
@@ -4245,8 +4252,7 @@ public class Log_In extends javax.swing.JFrame {
                 String prodn = rst.getString("producto");
                 String total = rst.getString("total");
                 String FF = rst.getString("fecha");
-                
-                
+
                 Object[] obj = {IDC, NC, Num, upc, prodn, total, FF};
                 modeloHT.addRow(obj);
             }
@@ -4255,13 +4261,31 @@ public class Log_In extends javax.swing.JFrame {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
-        
+
         JD_MainClientes.dispose();
         AbrirVentana(JD_FacturaCliente);
     }//GEN-LAST:event_btn_FactClienteMouseClicked
 
     private void btn_InsertProductoVendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InsertProductoVendMouseClicked
+        try {
+
+            DefaultComboBoxModel<String> cbmodel = new DefaultComboBoxModel<>();
+
+            AdminDB bd = new AdminDB();
+            String dataToSelect = "select t_id from tienda";
+            rst = bd.ReturnResultSet(dataToSelect);
+
+            while (rst.next()) {
+                String tiendaId = rst.getString("t_id");
+                cbmodel.addElement(tiendaId);
+            }
+
+            CB_IDTienda.setModel(cbmodel);
+
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
         JD_MainVendedor.dispose();
         AbrirVentana(JD_InsertProducto);
     }//GEN-LAST:event_btn_InsertProductoVendMouseClicked
@@ -4273,7 +4297,6 @@ public class Log_In extends javax.swing.JFrame {
             String dataToSelect = "select * from inventory";
             rst = dbcon.ReturnResultSet(dataToSelect);
 
-
             DefaultTableModel modeloPR = new DefaultTableModel();
             modeloPR.addColumn("ID Tienda");
             modeloPR.addColumn("UPC");
@@ -4283,7 +4306,6 @@ public class Log_In extends javax.swing.JFrame {
             modeloPR.addColumn("Precio");
             modeloPR.addColumn("Cantidad");
             modeloPR.addColumn("Reorden");
-            
 
             while (rst.next()) {
                 String IDTienda = rst.getString("t_id");
@@ -4294,7 +4316,7 @@ public class Log_In extends javax.swing.JFrame {
                 String Precio = rst.getString("precio");
                 String Cantidad = rst.getString("cantidad");
                 String Reorden = rst.getString("reorden");
-                
+
                 Object[] obj = {IDTienda, UPC, Nombre_Producto, Tam, Marca, Precio, Cantidad, Reorden};
                 modeloPR.addRow(obj);
             }
@@ -4303,8 +4325,7 @@ public class Log_In extends javax.swing.JFrame {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
-        
+
         JD_MainVendedor.dispose();
         AbrirVentana(JD_CrudProductos);
     }//GEN-LAST:event_btn_InventarioVendMouseClicked
@@ -4315,7 +4336,6 @@ public class Log_In extends javax.swing.JFrame {
             AdminDB dbcon = new AdminDB();
             String dataToSelect = "select * from comprasxcliente";
             rst = dbcon.ReturnResultSet(dataToSelect);
-
 
             DefaultTableModel modeloCxC = new DefaultTableModel();
             modeloCxC.addColumn("ID Cliente");
@@ -4334,7 +4354,7 @@ public class Log_In extends javax.swing.JFrame {
                 String NomProd = rst.getString("producto_nombre");
                 String TotalFact = rst.getString("factura_total");
                 String FechaFact = rst.getString("factura_fecha");
-                
+
                 Object[] obj = {IDCliente, NomCliente, NumFact, UPC, NomProd, TotalFact, FechaFact};
                 modeloCxC.addRow(obj);
             }
@@ -4344,7 +4364,6 @@ public class Log_In extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        
         JD_MainVendedor.dispose();
         AbrirVentana(JD_ComprasxCliente);
     }//GEN-LAST:event_btn_ComprasClienteVendMouseClicked
@@ -4355,48 +4374,57 @@ public class Log_In extends javax.swing.JFrame {
 
     private void btn_SalirMenuVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_SalirMenuVendedorMouseClicked
         int opcion = JOptionPane.showConfirmDialog(null, "Desea salir del usuario actual?", "Salir", JOptionPane.YES_NO_OPTION);
-        if (opcion == 0){
+        if (opcion == 0) {
             JD_MainVendedor.setVisible(false);
             this.setVisible(true);
         }
     }//GEN-LAST:event_btn_SalirMenuVendedorMouseClicked
 
     private void btn_DeleteProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DeleteProductoMouseClicked
-        if (JTB_TablaProductos.getSelectedRow()>=0){
+        if (JTB_TablaProductos.getSelectedRow() >= 0) {
             int decision = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar este producto?", "Eliminar Cliente", JOptionPane.YES_NO_OPTION);
-            
-            if (decision == 0){
-                
+
+            if (decision == 0) {
+
                 try {
                     AdminDB bd = new AdminDB();
                     //String Oldnombre = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 1).toString();
                     productoToUpdate = JTB_TablaProductos.getValueAt(JTB_TablaProductos.getSelectedRow(), 1).toString();
 
                     //Llamado de Procedimento para eliminar cliente
-                    bd.Ingreso("CALL eliminar_producto('"+productoToUpdate+"');");                                                                          
+                    bd.Ingreso("CALL eliminar_producto('" + productoToUpdate + "');");
                     productoToUpdate = "";
                     //Remueve el cliente de la tabla activa
                     DefaultTableModel model = (DefaultTableModel) JTB_TablaProductos.getModel();
                     model.removeRow(JTB_TablaProductos.getSelectedRow());
                     JTB_TablaProductos.setModel(model);
-                    
 
                     JOptionPane.showMessageDialog(null, "El producto ha sido eliminado exitosamente.");
                     //System.out.println("nombre seleccionado = "+Oldnombre);
 
-                    
                 } catch (Exception exp) {
                     exp.printStackTrace();
                 }
-                
+
             }
-           
-        }
-        else{
+
+        } else {
             JOptionPane.showMessageDialog(null, "Tiene que seleccionar un cliente para eliminar.");
         }
-            
+
     }//GEN-LAST:event_btn_DeleteProductoMouseClicked
+
+    private void btn_DeleteProductoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DeleteProductoMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_DeleteProductoMouseEntered
+
+    private void btn_CrearProductoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CrearProductoMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_CrearProductoMouseEntered
+
+    private void btn_salirInsertProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirInsertProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_salirInsertProductoActionPerformed
 
     private String generateID() {
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -4407,16 +4435,15 @@ public class Log_In extends javax.swing.JFrame {
         }
         return id;
     }
-    
-    
+
     //Metodo utilizado para abrir las ventanas adicionales del programa.
-    public void AbrirVentana(JDialog ventana){
+    public void AbrirVentana(JDialog ventana) {
         ventana.pack();
         ventana.setModal(false);
         ventana.setLocationRelativeTo(this);
         ventana.setVisible(true);
     }
-    
+
     //Metodo utilizado para confirmar que la cadena ingresada es un double
     public boolean EsUnDouble(String x) {
         int pointcounter = 0;
@@ -4424,18 +4451,21 @@ public class Log_In extends javax.swing.JFrame {
             if ((x.charAt(i) < 48 || x.charAt(i) > 57) && x.charAt(i) != 46) {
                 return false;
             }
-            if (x.charAt(i) == 46){
+            if (x.charAt(i) == 46) {
                 pointcounter++;
             }
         }
-        
-        if (pointcounter > 1){
+
+        if (pointcounter > 1) {
             return false;
         }
-        return true; 
+        double valor=Double.parseDouble(x);
+        if(valor>0)
+            return true;
+        else
+            return false;
     }
-    
-    
+
     /**
      * @param args the command line arguments
      */
@@ -4503,6 +4533,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JDialog JD_UpdateVendedor;
     private javax.swing.JDialog JD_VentasxTienda;
     private javax.swing.JSpinner JS_Cantidad;
+    private javax.swing.JSpinner JS_ProdCantidadUpdate;
     private javax.swing.JTable JTB_CocaPepsi;
     private javax.swing.JTable JTB_CompraProdCliente;
     private javax.swing.JTable JTB_ComprasCliente;
@@ -4516,7 +4547,6 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JTable JTB_TiposProd;
     private javax.swing.JTable JTB_VendedoresAct;
     private javax.swing.JTable JTB_VentasxTienda;
-    private javax.swing.JTextField TF_CantidadProductoUpdate;
     private javax.swing.JTextField TF_CorreoCliente;
     private javax.swing.JTextField TF_CorreoClienteUpd;
     private javax.swing.JTextField TF_EmbalajeProducto;
