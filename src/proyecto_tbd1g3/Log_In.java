@@ -82,6 +82,7 @@ public class Log_In extends javax.swing.JFrame {
         btn_ComprasxCliente = new javax.swing.JButton();
         btn_ProdxPais = new javax.swing.JButton();
         btn_CocavsPepsi = new javax.swing.JButton();
+        btn_bitacora = new javax.swing.JButton();
         JD_CrudClientes = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -322,6 +323,12 @@ public class Log_In extends javax.swing.JFrame {
         btn_InventarioVend = new javax.swing.JButton();
         btn_ComprasClienteVend = new javax.swing.JButton();
         btn_SalirMenuVendedor = new javax.swing.JButton();
+        JD_Bitacora = new javax.swing.JDialog();
+        jPanel27 = new javax.swing.JPanel();
+        jLabel101 = new javax.swing.JLabel();
+        btn_salirBitacora = new javax.swing.JButton();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        JTB_Bitacora = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -556,6 +563,16 @@ public class Log_In extends javax.swing.JFrame {
             }
         });
 
+        btn_bitacora.setBackground(new java.awt.Color(0, 102, 153));
+        btn_bitacora.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 14)); // NOI18N
+        btn_bitacora.setForeground(new java.awt.Color(255, 255, 255));
+        btn_bitacora.setText("Bitacora");
+        btn_bitacora.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_bitacoraMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -563,16 +580,14 @@ public class Log_In extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel10)
+                        .addGap(49, 49, 49)
+                        .addComponent(btn_bitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(btn_MainClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
-                                .addComponent(btn_ProductosMain, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
-                                .addComponent(btn_TiendasMain, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btn_MainVendedores, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btn_TiendasEstrella, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -585,14 +600,19 @@ public class Log_In extends javax.swing.JFrame {
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btn_TiposProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                                     .addComponent(btn_CocavsPepsi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_MainClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_MainVendedores, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(44, 44, 44)
+                                .addComponent(btn_ProductosMain, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(44, 44, 44)
+                                .addComponent(btn_TiendasMain, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(btn_salirMain, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(36, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -600,7 +620,9 @@ public class Log_In extends javax.swing.JFrame {
             .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_bitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -2990,6 +3012,64 @@ public class Log_In extends javax.swing.JFrame {
             .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        JD_Bitacora.setTitle("Bitacora -Tiendas Circle K");
+
+        jPanel27.setBackground(new java.awt.Color(0, 51, 102));
+
+        jLabel101.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 24)); // NOI18N
+        jLabel101.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel101.setText("Bitacora de Operaciones en la Base de Datos");
+
+        btn_salirBitacora.setBackground(new java.awt.Color(102, 0, 0));
+        btn_salirBitacora.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 16)); // NOI18N
+        btn_salirBitacora.setForeground(new java.awt.Color(255, 255, 255));
+        btn_salirBitacora.setText("Salir");
+        btn_salirBitacora.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_salirBitacoraMouseClicked(evt);
+            }
+        });
+
+        jScrollPane14.setViewportView(JTB_Bitacora);
+
+        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+        jPanel27.setLayout(jPanel27Layout);
+        jPanel27Layout.setHorizontalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel101, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_salirBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 835, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+        jPanel27Layout.setVerticalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel101, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_salirBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout JD_BitacoraLayout = new javax.swing.GroupLayout(JD_Bitacora.getContentPane());
+        JD_Bitacora.getContentPane().setLayout(JD_BitacoraLayout);
+        JD_BitacoraLayout.setHorizontalGroup(
+            JD_BitacoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        JD_BitacoraLayout.setVerticalGroup(
+            JD_BitacoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Log In - Tiendas Circle K");
 
@@ -3100,6 +3180,7 @@ public class Log_In extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_TiposProductoActionPerformed
 
+    //Este metodo decide la accio a realizar y la ventana a abrir dependiendo quien este ingresando (Admin, Vendedor, Cliente)
     private void btn_LogInConfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_LogInConfMouseClicked
         if (!jtf_NombreUser.getText().equals("") && !jtf_PassUser.getText().equals("")) {//
             try {
@@ -3133,11 +3214,33 @@ public class Log_In extends javax.swing.JFrame {
                         JD_MainScreen.setLocationRelativeTo(this);
                         JD_MainScreen.setVisible(true);
 
-                    } else if (CurrentUserRole.equals("Cliente")) {
+                    } else if (CurrentUserRole.equals("Cliente")) {                   
+                        
                         this.setVisible(false);
                         JOptionPane.showMessageDialog(null, "Log In Exitoso.\nBienvenido, " + jtf_NombreUser.getText());
+                        
+                        CurrentuName = jtf_NombreUser.getText();
+                        CurrentPass = jtf_PassUser.getText();
+
+                        //Setear al usuario como activo
+                        dbcon.Ingreso("update usuario\n"
+                                + "set activo = 'true'\n"
+                                + "where us_nombre = '" + CurrentuName + "' and contraseña = '" + CurrentPass + "'");
+                        
+                        
                         AbrirVentana(JD_MainClientes);
+                        
+
                     } else if (CurrentUserRole.equals("Vendedor")) {
+                        
+                        CurrentuName = jtf_NombreUser.getText();
+                        CurrentPass = jtf_PassUser.getText();
+
+                        //Setear al usuario como activo
+                        dbcon.Ingreso("update usuario\n"
+                                + "set activo = 'true'\n"
+                                + "where us_nombre = '" + CurrentuName + "' and contraseña = '" + CurrentPass + "'");
+                        
                         this.setVisible(false);
                         JOptionPane.showMessageDialog(null, "Log In Exitoso.\nBienvenido, " + jtf_NombreUser.getText());
                         AbrirVentana(JD_MainVendedor);
@@ -3170,6 +3273,7 @@ public class Log_In extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_LogInConfMouseClicked
 
+    //Opcion de salida de menu principal
     private void btn_salirMainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirMainMouseClicked
         int opcion = JOptionPane.showConfirmDialog(null, "Desea salir del usuario actual?", "Salir", JOptionPane.YES_NO_OPTION);
         if (opcion == 0) {
@@ -3402,6 +3506,14 @@ public class Log_In extends javax.swing.JFrame {
     private void btn_SalirMenuClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_SalirMenuClientesMouseClicked
         int opcion = JOptionPane.showConfirmDialog(null, "Desea salir del usuario actual?", "Salir", JOptionPane.YES_NO_OPTION);
         if (opcion == 0) {
+            
+            
+            AdminDB dbcon = new AdminDB();
+            //Setear al usuario como Inactivo al salir del programa
+            dbcon.Ingreso("update usuario\n"
+                    + "set activo = 'false'\n"
+                    + "where us_nombre = '" + CurrentuName + "' and contraseña = '" + CurrentPass + "'");
+            
             JD_MainClientes.setVisible(false);
             this.setVisible(true);
         }
@@ -4375,6 +4487,13 @@ public class Log_In extends javax.swing.JFrame {
     private void btn_SalirMenuVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_SalirMenuVendedorMouseClicked
         int opcion = JOptionPane.showConfirmDialog(null, "Desea salir del usuario actual?", "Salir", JOptionPane.YES_NO_OPTION);
         if (opcion == 0) {
+            
+            AdminDB dbcon = new AdminDB();
+            //Setear al usuario como Inactivo al salir del programa
+            dbcon.Ingreso("update usuario\n"
+                    + "set activo = 'false'\n"
+                    + "where us_nombre = '" + CurrentuName + "' and contraseña = '" + CurrentPass + "'");
+            
             JD_MainVendedor.setVisible(false);
             this.setVisible(true);
         }
@@ -4425,6 +4544,47 @@ public class Log_In extends javax.swing.JFrame {
     private void btn_salirInsertProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirInsertProductoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_salirInsertProductoActionPerformed
+
+    private void btn_salirBitacoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirBitacoraMouseClicked
+        JD_Bitacora.dispose();
+        AbrirVentana(JD_MainScreen);
+    }//GEN-LAST:event_btn_salirBitacoraMouseClicked
+
+    private void btn_bitacoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_bitacoraMouseClicked
+        try {
+            AdminDB dbcon = new AdminDB();
+            String dataToSelect = "select * from bitacora";
+            rst = dbcon.ReturnResultSet(dataToSelect);
+
+            DefaultTableModel modeloPR = new DefaultTableModel();
+            modeloPR.addColumn("ID Usuario");
+            modeloPR.addColumn("Tabla Mod");
+            modeloPR.addColumn("Operacion");
+            modeloPR.addColumn("Dato");
+            modeloPR.addColumn("Hora");
+
+
+            while (rst.next()) {
+                String IDUser = rst.getString("us_id");
+                String tablam = rst.getString("tabla");
+                String oper = rst.getString("operacion");
+                String dato = rst.getString("dato");
+                String hora = rst.getString("hora");
+
+
+                Object[] obj = {IDUser, tablam, oper, dato, hora};
+                modeloPR.addRow(obj);
+            }
+            JTB_Bitacora.setModel(modeloPR);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        
+        JD_MainScreen.dispose();
+        AbrirVentana(JD_Bitacora);
+    }//GEN-LAST:event_btn_bitacoraMouseClicked
 
     private String generateID() {
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -4507,6 +4667,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CB_IDTienda;
     private javax.swing.JComboBox<String> CB_TamProducto;
     private javax.swing.JComboBox<String> CB_TamProductoUpdate;
+    private javax.swing.JDialog JD_Bitacora;
     private javax.swing.JDialog JD_CocavsPepsi;
     private javax.swing.JDialog JD_ComprarProdCliente;
     private javax.swing.JDialog JD_ComprasxCliente;
@@ -4534,6 +4695,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JDialog JD_VentasxTienda;
     private javax.swing.JSpinner JS_Cantidad;
     private javax.swing.JSpinner JS_ProdCantidadUpdate;
+    private javax.swing.JTable JTB_Bitacora;
     private javax.swing.JTable JTB_CocaPepsi;
     private javax.swing.JTable JTB_CompraProdCliente;
     private javax.swing.JTable JTB_ComprasCliente;
@@ -4620,9 +4782,11 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JButton btn_UpdateTienda;
     private javax.swing.JButton btn_UpdateTiendaConf;
     private javax.swing.JButton btn_UpdateVendedor;
+    private javax.swing.JButton btn_bitacora;
     private javax.swing.JButton btn_salirAdminClientes;
     private javax.swing.JButton btn_salirAdminProds;
     private javax.swing.JButton btn_salirAdminTiendas;
+    private javax.swing.JButton btn_salirBitacora;
     private javax.swing.JButton btn_salirCrudVend;
     private javax.swing.JButton btn_salirFacturaCliente;
     private javax.swing.JButton btn_salirInsertCliente;
@@ -4637,6 +4801,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JButton btn_salirUpdateVend;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -4753,6 +4918,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -4765,6 +4931,7 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
