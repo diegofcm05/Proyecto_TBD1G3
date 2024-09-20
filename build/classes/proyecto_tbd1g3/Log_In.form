@@ -831,6 +831,7 @@
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_DeleteProductoMouseClicked"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_DeleteProductoMouseEntered"/>
               </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -1680,6 +1681,7 @@
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_salirInsertProductoMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_salirInsertProductoActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel26">
@@ -1794,6 +1796,7 @@
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_CrearProductoMouseClicked"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_CrearProductoMouseEntered"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel95">
@@ -2167,12 +2170,10 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel48" min="-2" pref="111" max="-2" attributes="0"/>
                           <Component id="CB_TamProductoUpdate" min="-2" pref="250" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabel40" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
-                              <Component id="jLabel37" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
-                              <Component id="TF_MarcaProductoUpdate" alignment="0" pref="250" max="32767" attributes="0"/>
-                              <Component id="TF_CantidadProductoUpdate" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel40" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
+                          <Component id="jLabel37" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
+                          <Component id="TF_MarcaProductoUpdate" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                          <Component id="JS_ProdCantidadUpdate" min="-2" pref="111" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -2210,10 +2211,10 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="TF_CantidadProductoUpdate" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="TF_PrecioProductoUpdate" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="JS_ProdCantidadUpdate" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel48" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                           <Component id="jLabel42" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
@@ -2223,7 +2224,7 @@
                           <Component id="CB_TamProductoUpdate" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="TF_ReOrdenProductoUpdate" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="50" max="32767" attributes="0"/>
+                      <EmptySpace pref="48" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btn_ConfUpdateProd" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="btn_salirUpdateProducto" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
@@ -2292,8 +2293,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="TF_nomProductoUpdate">
-            </Component>
-            <Component class="javax.swing.JTextField" name="TF_CantidadProductoUpdate">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel41">
               <Properties>
@@ -2385,6 +2384,13 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tama&#xf1;o"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSpinner" name="JS_ProdCantidadUpdate">
+              <Properties>
+                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                  <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>
