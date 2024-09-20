@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class QueryTest {
     
+    //Metodo para probar una consulta
     public void TestaQuery(){
         AdminDB bd = new AdminDB();
         //bd.Conectarme();
